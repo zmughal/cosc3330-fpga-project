@@ -1,37 +1,3 @@
--- Copyright (c) 2010 Gregory Estrade (greg@torlus.com)
---
--- All rights reserved
---
--- Redistribution and use in source and synthezised forms, with or without
--- modification, are permitted provided that the following conditions are met:
---
--- Redistributions of source code must retain the above copyright notice,
--- this list of conditions and the following disclaimer.
---
--- Redistributions in synthesized form must reproduce the above copyright
--- notice, this list of conditions and the following disclaimer in the
--- documentation and/or other materials provided with the distribution.
---
--- Neither the name of the author nor the names of other contributors may
--- be used to endorse or promote products derived from this software without
--- specific prior written permission.
---
--- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
--- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
--- THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
--- PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
--- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
--- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
--- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
--- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
--- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
--- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
--- POSSIBILITY OF SUCH DAMAGE.
---
--- Please report bugs to the author, but before you do so, please
--- make sure that this is not a derivative work and that
--- you have the latest version of this file.
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
@@ -51,8 +17,8 @@ begin
 	begin
 		if OEn = '0' then
 			case A is
-when x"00" => D <= x"ffff";
-when x"01" => D <= x"ff00";
+when x"00" => D <= x"1337";
+when x"01" => D <= x"b00b";
 when x"02" => D <= x"0000";
 when x"03" => D <= x"0008";
 when x"04" => D <= x"46fc";
@@ -79,7 +45,7 @@ when x"18" => D <= x"43f8";
 when x"19" => D <= x"ff00";
 when x"1A" => D <= x"203c";
 when x"1B" => D <= x"0000";
-when x"1C" => D <= x"00a4";
+when x"1C" => D <= x"00aa";
 when x"1D" => D <= x"223c";
 when x"1E" => D <= x"0000";
 when x"1F" => D <= x"0050";
@@ -130,19 +96,23 @@ when x"4B" => D <= x"00a1";
 when x"4C" => D <= x"0001";
 when x"4D" => D <= x"1080";
 when x"4E" => D <= x"41f8";
-when x"4F" => D <= x"0004";
-when x"50" => D <= x"2050";
-when x"51" => D <= x"4ed0";
-when x"52" => D <= x"0000";
-when x"53" => D <= x"0000";
-when x"54" => D <= x"0000";
+when x"4F" => D <= x"0000";
+when x"50" => D <= x"2e50";
+when x"51" => D <= x"41f8";
+when x"52" => D <= x"0004";
+when x"53" => D <= x"2050";
+when x"54" => D <= x"4ed0";
 when x"55" => D <= x"0000";
 when x"56" => D <= x"0000";
 when x"57" => D <= x"0000";
 when x"58" => D <= x"0000";
 when x"59" => D <= x"0000";
-when x"5A" => D <= x"4e75";
-when x"5B" => D <= x"4e75";
+when x"5A" => D <= x"0000";
+when x"5B" => D <= x"0000";
+when x"5C" => D <= x"0000";
+when x"5D" => D <= x"0000";
+when x"5E" => D <= x"4e75";
+when x"5F" => D <= x"4e75";
 when others => D <= x"ffff";
 			end case;
 		else
