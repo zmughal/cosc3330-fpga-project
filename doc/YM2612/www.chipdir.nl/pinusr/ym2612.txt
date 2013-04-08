@@ -1,0 +1,27 @@
+name:         YM2612
+function:     FM sound generator
+package:      DIP,24
+manufacturer: Yamaha
+added-by:     Andre Delavy
+comment:      Genesis Megadrive FM chip
+
+    +--()--+
+GND | 1  24| 0M(CLK)
+ D0 | 2  23| Vcc
+ D1 | 3  22| A.Vcc
+ D2 | 4  21| MOL
+ D3 | 5  20| MOR
+ D4 | 6  19| A.GND
+ D5 | 7  18| A1
+ D6 | 8  17| A0
+ D7 | 9  16| /RD
+  ? |10  15| /WR
+/IC |11  14| /CS
+GND |12  13| /IRQ
+    +------+
+
+This information was added by a third party and may be incorrect.
+
+This pinout came from the Chipdir:
+http://www.chipdir.org/
+

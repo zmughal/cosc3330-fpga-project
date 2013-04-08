@@ -1,0 +1,2528 @@
+<!DOCTYPE
+  HTML PUBLIC 
+  "-//W3C//DTD HTML 4.01//EN" 
+  "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+    <head>
+        <title>YM2413 Application Manual - Documents - Maxim’s World of Stuff</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel='stylesheet' title="Maxim's theme" href='../pub/skins/maxim/maxim.css' type='text/css'>
+	<link rel='stylesheet' title="Print view" href='../pub/skins/maxim/print.css' type='text/css' media="print">
+        <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><link rel='alternate' title='Maxim’s World of Stuff RSS' href='http://www.smspower.org/maxim/RecentChanges?action=rss' type='application/rss+xml' />
+<link rel='stylesheet' type='text/css' href='../../pub/attachtable/attachtable.css' />  <meta name='robots' content='index,follow' />
+
+
+		<script type="text/javascript">
+		<!-- //
+		
+		isIE = 0;
+		browser_type = navigator.appName;
+		if (browser_type == "Microsoft Internet Explorer") { 
+			document.write("<link href='http://www.smspower.org/maxim/pub/skins/maxim/maxim-ie.css' rel='stylesheet' type='text/css'>"); 
+			isIE = 1;
+		}
+
+        // -->
+        </script>
+    </head>
+
+    <body>
+	    
+		<div id="header" style="background: url(../pub/skins/maxim/image/Box-Top-35.png) no-repeat; " >
+                        <div id="page-title"><a href='http://www.smspower.org/maxim'>Maxim’s World of Stuff</a></div>
+                        <div id="page-subtitle"><a href='http://www.smspower.org/maxim/Documents' title='Documents Home'>Documents</a> :: YM2413 Application Manual</div>
+        </div>
+
+        <div id="main">
+            <div class="content-mat">
+                <div id="content">
+			<!--PageText-->
+<div id='wikitext'>
+<p class='vspace'><a name='top' id='top'></a>
+</p><h2>YM2413 FM Operator Type-LL (OPLL) Application Manual</h2>
+<p>This document is an HTML conversion of <a class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/ym2413amscans.zip' rel='nofollow'>these scans</a>
+of an original document by Ricardo Bittencourt. This document typed by Maxim in
+2003.
+<span  style='background-color: #eee; display: inline;'>Shading indicates additions/corrections/comments.</span>
+</p>
+<div class='vspace'></div><h2>Table of Contents</h2>
+<ol  style='list-style: upper-roman;'><li> <a href='YM2413ApplicationManual#i'>What is OPLL?</a>
+<ol><li><a href='YM2413ApplicationManual#i1'>Outline</a>
+</li><li><a href='YM2413ApplicationManual#i2'>Features</a>
+</li><li><a href='YM2413ApplicationManual#i3'>Sound Synthesis by FM</a>
+</li></ol></li><li><a href='YM2413ApplicationManual#ii'>Functions</a>
+<ol><li><a href='YM2413ApplicationManual#ii1'>Primary Functions</a>
+</li><li><a href='YM2413ApplicationManual#ii2'>Pin Assignments</a>
+</li><li><a href='YM2413ApplicationManual#ii3'>Pin Functions</a>
+</li><li><a href='YM2413ApplicationManual#ii4'>Bus Control</a>
+</li><li><a href='YM2413ApplicationManual#ii5'>Channels and Slots</a>
+</li><li><a href='YM2413ApplicationManual#ii6'>Block Diagram</a>
+</li><li><a href='YM2413ApplicationManual#ii7'>Register Map</a>
+</li></ol></li><li><a href='YM2413ApplicationManual#iii'>Description of Operation</a>
+<ol><li><a href='YM2413ApplicationManual#iii1'>Registers</a>
+<ol><li><a href='YM2413ApplicationManual#iii11'>TEST: Address [&#036;0F</a>]
+</li><li><a href='YM2413ApplicationManual#iii12'>AM/VIB/EG-TYP/KSR/MUL: Address [&#036;00~&#036;01</a>]
+</li><li><a href='YM2413ApplicationManual#iii13'>KSL/TL/DC/DM/FB: Address [&#036;02~&#036;03</a>]
+</li><li><a href='YM2413ApplicationManual#iii14'>AR/DR: Address [&#036;04~&#036;05</a>]
+</li><li><a href='YM2413ApplicationManual#iii15'>SL/RR: Address [&#036;06~&#036;07</a>]
+</li><li><a href='YM2413ApplicationManual#iii16'>BLOCK/F-Number/SUS/KEY: Address [&#036;A0~&#036;B8</a>]
+</li><li><a href='YM2413ApplicationManual#iii17'>RHYTHM: Address [&#036;0E</a>]
+</li><li><a href='YM2413ApplicationManual#iii18'>INST/VOL: Address [&#036;30~&#036;38</a>]
+</li></ol></li><li><a href='YM2413ApplicationManual#iii2'>Phase Generator (PG)</a>
+</li><li><a href='YM2413ApplicationManual#iii3'>Envelope Generator (EG)</a>
+</li><li><a href='YM2413ApplicationManual#iii4'>Operator (OP) and DAC</a>
+</li></ol></li><li><a href='YM2413ApplicationManual#iv'>Interfacing</a>
+<ol><li><a href='YM2413ApplicationManual#iv1'>Clock Generation</a>
+</li><li><a href='YM2413ApplicationManual#iv2'>Audio Output Interface</a>
+</li><li><a href='YM2413ApplicationManual#iv3'>Interfacing Microprocessor/Microcomputer</a>
+</li></ol></li><li><a href='YM2413ApplicationManual#v'>Synthesis of Music Sounds</a>
+<ol><li><a href='YM2413ApplicationManual#v1'>Procedure of Synthesizing Sounds</a>
+</li><li><a href='YM2413ApplicationManual#v2'>Fundamentals of Sound Synthesis</a>
+</li><li><a href='YM2413ApplicationManual#v3'>Examples of Sound Synthesis</a>
+</li><li><a href='YM2413ApplicationManual#v4'>Procedure of Percussion Sound Synthesis</a>
+</li></ol></li><li><a href='YM2413ApplicationManual#vi'>Electrical Characteristics</a>
+</li><li><a href='YM2413ApplicationManual#vii'>Timing Diagrams</a>
+</li><li><a href='YM2413ApplicationManual#viii'>Outline Dimensions</a>
+</li></ol><div class='vspace'></div><h2>Original page numbers</h2>
+<p><a href='YM2413ApplicationManual#page1'>1</a> - <a href='YM2413ApplicationManual#page2'>2</a> - <a href='YM2413ApplicationManual#page3'>3</a> - <a href='YM2413ApplicationManual#page4'>4</a> - <a href='YM2413ApplicationManual#page5'>5</a> - <a href='YM2413ApplicationManual#page6'>6</a> - <a href='YM2413ApplicationManual#page7'>7</a> - <a href='YM2413ApplicationManual#page8'>8</a> - <a href='YM2413ApplicationManual#page9'>9</a> - <a href='YM2413ApplicationManual#page10'>10</a> -
+<a href='YM2413ApplicationManual#page11'>11</a> - <a href='YM2413ApplicationManual#page12'>12</a> - <a href='YM2413ApplicationManual#page13'>13</a> - <a href='YM2413ApplicationManual#page14'>14</a> - <a href='YM2413ApplicationManual#page15'>15</a> - <a href='YM2413ApplicationManual#page16'>16</a> - <a href='YM2413ApplicationManual#page17'>17</a> - <a href='YM2413ApplicationManual#page18'>18</a> - <a href='YM2413ApplicationManual#page19'>19</a> - <a href='YM2413ApplicationManual#page20'>20</a> -
+<a href='YM2413ApplicationManual#page21'>21</a> - <a href='YM2413ApplicationManual#page22'>22</a> - <a href='YM2413ApplicationManual#page23'>23</a> - <a href='YM2413ApplicationManual#page24'>24</a> - <a href='YM2413ApplicationManual#page25'>25</a> - <a href='YM2413ApplicationManual#page26'>26</a> - <a href='YM2413ApplicationManual#page27'>27</a>
+</p>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page1' id='page1'></a> <a style='color: white' href='YM2413ApplicationManual#page1'>Page 1</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-01.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='i' id='i'></a>
+</p><h2>I. What is OPLL?</h2>
+<p><a name='i1' id='i1'></a>
+</p><h3>(I-1) Outline</h3>
+<p>This LL-Type FM Operator incorporates a DA Converter and a Quartz Oscillator in addition to a YAMAHA original FM Sound Generator, allowing for a much easier and more economical sound generating system assembly than conventional LSIs. Tone data are stored in ROM for software simplicity, making it possible to execute data alterations involved in tone changes with just one Instruments selection operation. Furthermore, a built-in Tone Data Register with capacity to store one tone allows for the generation of sound effects and original tones. Tones applicable to the &ldquo;CAPTAIN&rdquo; and TELETEXT are included among built-in tone data.
+</p>
+<p class='vspace'><a name='i2' id='i2'></a>
+</p><h3>(I-2) Features</h3>
+<ul><li>FM Sound Generator for real sound creation.
+</li><li>Two selectable modes: 9 simultaneous sounds or 6 melody sounds plus 5 rhythm sounds (different tones can be used together in either case).
+</li><li>Built-in Instruments data (15 melody tones, 5 rhythm tones, &ldquo;CAPTAIN&rdquo; and TELETEXT applicable tones).
+</li><li>Built-in DA Converter.
+</li><li>Built-in Quartz Oscillator.
+</li><li>Built-in Vibrato Oscillator/AM Oscillator.
+</li><li>TTL Compatible Input.
+</li><li>Si-Gate NMOS LSI.
+</li><li>A single 5V power source.
+</li></ul><p class='vspace'><a name='i3' id='i3'></a>
+</p><h3>(I-3) Sound Synthesis by FM</h3>
+<p>This is a method that makes use of harmonics generated by modulation to synthesize musical sounds. Circuitry to realize this method is relatively simple and is capable of generating waveforms including high order harmonics and un-harmonious sounds. It is known that relationships between the modulation index and the spectrum of harmonics are so natural that it is possible to synthesize a wide variety of sounds from natural musical instruments to artificial sounds.
+</p>
+<p class='vspace'>This method is expressed with four parameters as follows.
+</p>
+<p class='vspace'><span class='rfloat'>(1)</span>
+F = A sin (ω<sub>c</sub>t + I sin (ω<sub>m</sub>t))
+</p>
+<p class='vspace'>Where A is the amplitude of output, I modulation index, ω<sub>c</sub> and ω<sub>m</sub> angular frequencies of carrier and modulator respectively. The equation (1) can be expressed alternately as follows.
+</p>
+<p class='vspace'><span class='rfloat'>(2)</span>
+F = A (J<sub>0</sub>(I) sin (ω<sub>c</sub>t) + J<sub>1</sub>(I) (sin ((ω<sub>c</sub> + ω<sub>m</sub>) t) - sin ((ω<sub>c</sub> - ω<sub>m</sub>) t) + J<sub>2</sub>(I) (sin ((ω<sub>c</sub> + 2ω<sub>m</sub>) t) - sin ((ω<sub>c</sub> - 2ω<sub>m</sub>) t) + ...
+</p>
+<p class='vspace'>Where J<sub>n</sub>(I) is the nth-order Bessel function of the first kind. The amplitude of each harmonic component is expressed as a Bessel function of the modulation index. Sound synthesis by FM is found to be useful to obtain specific musical sounds or sound effects. String sounds, however, cannot be obtained as the distribution of harmonics is not uniform. A method called
+</p>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page2' id='page2'></a> <a style='color: white' href='YM2413ApplicationManual#page2'>Page 2</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-02.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'>&ldquo;Feedback FM&rdquo; has been incorporated to solve the problem. This method is characterized by the following equation:
+</p>
+<p class='vspace'><span class='rfloat'>(3)</span>
+F = A sin (ω<sub>c</sub>t + βF)
+</p>
+<p class='vspace'>Where β is the rate of feedback. The spectrum of harmonics produced by &ldquo;feedback FM&rdquo; has a saw-tooth waveform and therefore it can be used to synthesize string sounds.
+</p>
+<p class='vspace'>Three function blocks, as follows, are needed to realize the above method of sound synthesis by FM.
+</p>
+<div class='vspace'></div><ol  style='list-style: lower-roman;'><li> Phase generator (PG) generating ω<sub>c</sub>
+</li><li>Envelope generator (EG) generating amplitude A and modulation index (I) which vary with time
+</li><li>Sin table (SIN)
+</li></ol><p class='vspace'>The method of sound synthesis by FM can be realized by <a href='YM2413ApplicationManual#figi1'>Figure I-1</a> with units (operator cells) which combine the three function blocks. By this method, all we have to do is to define a frequency parameter and EG parameters.
+</p>
+<p class='vspace'><a name='figi1' id='figi1'></a>
+</p><div><img src='../uploads/Documents/figurei1.png' alt='' title='' /></div>
+<p class='vspace'>Figure I-1 Sound synthesis by FM with units
+</p>
+<p class='vspace'><a name='ii' id='ii'></a>
+</p><h2>II. Functions</h2>
+<p><a name='ii1' id='ii1'></a>
+</p><h3>(II-1) Primary Functions</h3>
+<p>This OPLL is an FM Sound Generator LSI with a built-in 9-Bit DA Converter. It has two sound generation modes: 9 melody sounds or 6 melody sounds plus 5 rhythm sounds, both allowing for simultaneous generation of different tones, Selection between these two modes can be performed from the software. One of the special features of the LSI is its built-in Instruments ROM. As shown in the table hereunder, this ROM incorporates 15 melody tones and 5 rhythm tones, as well as all tones used for &ldquo;CAPTAIN&rdquo; and TELETEXT. Furthermore, a built-in Tone Register with capacity to store one tone allows for the creation of sound effects and original sounds. By controlling the parameters of this register (E, ω<sub>1</sub>, I and ω<sub>2</sub> in the equation below), all kinds of harmonics can be created on the basis of the sample wave ω<sub>1</sub>.
+</p>
+<p class='vspace'>FM = E sin (ω<sub>1</sub>t + I sin (ω<sub>2</sub>t))
+</p>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page3' id='page3'></a> <a style='color: white' href='YM2413ApplicationManual#page3'>Page 3</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-03.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'>Unlike conventional FM sound generators, this OPLL has a built-in Instruments ROM, permitting a substantial simplification of sound generation commands from the processor. First, the desired Instruments code is stored in the Instruments Selection Register. Then, after data has been input at the fixed intervals and timing, the unit starts generating sound. Automatic Processor play can be easily performed by writing data appropriate to the desired music into the Sustain and Volume registers. For using an original tone, the Instruments Selection Register must be cleared after writing data into the Tone Register as explained above. Rhythm sounds are generated by turning ON or OFF the corresponding bits in the Rhythm Control Register. In this case, the specified data must be input into the Key ON/OFF and F-Number Registers 8CH and 9CH.
+</p>
+<p class='vspace'><a name='ii2' id='ii2'></a>
+</p><h3>(II-2) Pin Assignment</h3>
+<div><img src='../uploads/Documents/pinassignment.png' alt='' title='' /></div>
+<p class='vspace'><a name='ii3' id='ii3'></a>
+</p><h3>(II-3) Pin Functions</h3>
+<table border='1' ><tr><td  valign='top'>Symbol
+</td><td  valign='top'>I/O
+</td><td  valign='top'>Function
+</td></tr><tr><td  valign='top'>XIN
+</td><td  valign='top'>I
+</td><td rowspan='2'  valign='top'>A quartz oscillator (3.579545 MHz) is connected between these two points.
+</td></tr><tr><td  valign='top'>XOUT
+</td><td  valign='top'>O
+</td></tr><tr><td  valign='top'>D<sub>0</sub>~D<sub>7</sub>
+</td><td  valign='top'>I/O
+</td><td  valign='top'>8-Bit Data Bus for OPLL control.
+</td></tr><tr><td  valign='top'>A<sub>0</sub>
+</td><td rowspan='3'  valign='top'>I
+</td><td rowspan='3'  valign='top'>For controlling the D<sub>0</sub>~D<sub>7</sub> Data Bus.
+<table border='1' ><tr ><th  align='center'><span class='bar'>CS</span></th><th  align='center'><span class='bar'>WE</span></th><th  align='center'>A<sub>0</sub></th><td ><span class='noborder'> </span><span class='unused'></span></td></tr>
+<tr ><td  align='center'>0</td><td  align='center'>0</td><td  align='center'>0</td><td  align='left'>Writes register address into OPLL.</td></tr>
+<tr ><td  align='center'>0</td><td  align='center'>0</td><td  align='center'>1</td><td  align='left'>Writes register contents into OPLL.</td></tr>
+<tr ><td  align='center'>0</td><td  align='center'>1</td><td  align='center'>0</td><td  align='left'>Outputs OPLL test data to D<sub>0</sub>, D<sub>1</sub> pins. Normally not used.</td></tr>
+<tr ><td  align='center'>0</td><td  align='center'>1</td><td  align='center'>1</td><td  align='left'>OPLL Data Bus high impedance</td></tr>
+<tr ><td  align='center'>1</td><td  align='center'>*</td><td  align='center'>*</td><td  align='left'>OPLL Data Bus high impedance</td></tr>
+</table></td></tr><tr><td  valign='top'><span class='bar'>CS</span>
+</td></tr><tr><td  valign='top'><span class='bar'>WE</span>
+</td></tr><tr><td  valign='top'><span class='bar'>IC</span>
+</td><td  valign='top'>I
+</td><td  valign='top'>Resets the system when the level is low, clearing OPLL Registers.
+</td></tr><tr><td  valign='top'>MO
+</td><td rowspan='2'  valign='top'>O
+</td><td rowspan='2'  valign='top'>Melody (MO) and Rhythm (RO) outputs. Both outputs are source followers. Integrated circuitry and an amplifier are necessary for subsequent processing.
+</td></tr><tr><td  valign='top'>RO
+</td></tr><tr><td  valign='top'>V<sub>CC</sub>
+</td><td  valign='top'>I
+</td><td  valign='top'>+5V Power Pin.
+</td></tr><tr><td  valign='top'>GND
+</td><td  valign='top'>-
+</td><td  valign='top'>Ground Pin.
+</td></tr></table>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page4' id='page4'></a> <a style='color: white' href='YM2413ApplicationManual#page4'>Page 4</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-04.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='ii4' id='ii4'></a>
+</p><h3>(II-4) Bus Control</h3>
+<p>The signals <span class='bar'>CS</span>, <span class='bar'>WE</span> and A<sub>0</sub> provide control in the data bus for items such as addressing the register in OPLL and read/write of the data. Namely, they select one of the four operating modes as follows.
+</p>
+<p class='vspace'><a name='tableii1' id='tableii1'></a>
+Table II-1 Mode selection
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td class='noborder'  valign='top'>
+</td><td  valign='top'><span class='bar'>CS</span>
+</td><td  valign='top'><span class='bar'>WE</span>
+</td><td  valign='top'>A<sub>0</sub>
+</td><td  valign='top'>
+</td></tr><tr><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>*
+</td><td  valign='top'>*
+</td><td  valign='top'>Inactive mode
+</td></tr><tr><td  valign='top'>2
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>Address write mode
+</td></tr><tr><td  valign='top'>3
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>Data write mode
+</td></tr><tr><td  valign='top'>4
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>Bus inhibited
+</td></tr></table>
+<div class='vspace'></div><ol><li>Inactive mode<br />  The bus lines (D<sub>0</sub>~D<sub>7</sub>) are at high impedance while <span class='bar'>CS</span> is &lsquo;1&prime;.
+</li><li>Address Write mode<br />  When writing an address, set the control signals to the address write mode and place the address data on the data bus. The address of the specified internal register is now ready to receive data. After writing an address, be sure to wait 12 cycles of the master clock (øM) before writing in sound data.
+</li><li>Data write mode<br />  When the control signals as <span  style='background-color: #eee; display: inline;'>(are)</span> set for the data write mode, the data existing on the data bus enters the register of the given address. Wait for 84 cycles of the master clock (øM) before writing in further data or another address.
+</li><li>Bus inhibited<br />  In this mode, the data of <span  style='background-color: #eee; display: inline;'>(on)</span> the data bus is meaningless and uncontrollable.
+</li></ol><p class='vspace'>Take note of the following regarding the address/data modes.
+</p>
+<p class='vspace'>OPLL needs a certain length of wait time between successive writings of addresses or data into the registers. The wait time varies between address and data write modes. The processor waits for a time in <a href='YM2413ApplicationManual#tableii2'>Table II-2</a> before OPLL performs another function. If the wait time is not observed data will be uncertain.
+</p>
+<p class='vspace'><a name='tableii2' id='tableii2'></a>
+Table II-2 Wait times
+</p>
+<table border='1' ><tr><td  valign='top'>Mode
+</td><td  valign='top'>Wait time
+</td></tr><tr><td  valign='top'>Address write
+</td><td  valign='top'>12 cycles
+</td></tr><tr><td  valign='top'>Data write
+</td><td  valign='top'>84 cycles
+</td></tr></table>
+<p>Note: the wait times are given in cycles of the master clock.
+</p>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page5' id='page5'></a> <a style='color: white' href='YM2413ApplicationManual#page5'>Page 5</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-05.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='ii5' id='ii5'></a>
+</p><h3>(II-5) Channels and Slots</h3>
+<p class='vspace'>OPLL can produce nine channels of FM sounds as it has two operator cells per channel. However, the FM Generator system has only one operator cell, therefore, calculation for nine channels of FM sound is performed by passing through the operator cell 18 times. The order (slot number) of the pass through the operator cell corresponds to the register number. Control of the sound production is effected by controlling the register associated with the slot.
+</p>
+<p class='vspace'>Channel data, like the F-number, controls two slots, No. 1 and 2.
+</p>
+<p class='vspace'>In FM mode, the No. 1 slot handles the modulating waves and the No. 2 slot the carrier. The No. 1 slot can also be set for feedback FM mode. See <a href='YM2413ApplicationManual#iii13'>(III-1-3)</a> for setting this mode.
+</p>
+<p class='vspace'><a name='tableii3' id='tableii3'></a>
+Table II-3 Channels and slots
+</p>
+<table border='1' ><tr><td  valign='top'>1
+</td><td  valign='top'>2
+</td><td  valign='top'>3
+</td><td  valign='top'>4
+</td><td  valign='top'>5
+</td><td  valign='top'>6
+</td><td  valign='top'>7
+</td><td  valign='top'>8
+</td><td  valign='top'>9
+</td><td  valign='top'>10
+</td><td  valign='top'>11
+</td><td  valign='top'>12
+</td><td  valign='top'>13
+</td><td  valign='top'>14
+</td><td  valign='top'>15
+</td><td  valign='top'>16
+</td><td  valign='top'>17
+</td><td  valign='top'>18
+</td><td  valign='top'>Slot No.
+</td></tr><tr><td  valign='top'>1
+</td><td  valign='top'>2
+</td><td  valign='top'>3
+</td><td  valign='top'>1
+</td><td  valign='top'>2
+</td><td  valign='top'>3
+</td><td  valign='top'>4
+</td><td  valign='top'>5
+</td><td  valign='top'>6
+</td><td  valign='top'>4
+</td><td  valign='top'>5
+</td><td  valign='top'>6
+</td><td  valign='top'>7
+</td><td  valign='top'>8
+</td><td  valign='top'>9
+</td><td  valign='top'>7
+</td><td  valign='top'>8
+</td><td  valign='top'>9
+</td><td  valign='top'>Channel No.
+</td></tr><tr><td colspan='3'  valign='top'>1
+</td><td colspan='3'  valign='top'>2
+</td><td colspan='3'  valign='top'>1
+</td><td colspan='3'  valign='top'>2
+</td><td colspan='3'  valign='top'>1
+</td><td colspan='3'  valign='top'>2
+</td><td  valign='top'>Slot No. when a channel is seen
+</td></tr><tr><td  valign='top'>20
+</td><td  valign='top'>21
+</td><td  valign='top'>22
+</td><td  valign='top'>20
+</td><td  valign='top'>21
+</td><td  valign='top'>22
+</td><td  valign='top'>23
+</td><td  valign='top'>24
+</td><td  valign='top'>25
+</td><td  valign='top'>23
+</td><td  valign='top'>24
+</td><td  valign='top'>25
+</td><td  valign='top'>26
+</td><td  valign='top'>27
+</td><td  valign='top'>28
+</td><td  valign='top'>26
+</td><td  valign='top'>27
+</td><td  valign='top'>28
+</td><td  valign='top'>Relationship between the data of each channel and the register. (Example $20 to $28)
+</td></tr></table>
+<p class='vspace'><a name='ii6' id='ii6'></a>
+</p><h3>(II-6) Block Diagram</h3>
+<div><img src='../uploads/Documents/blockdiagram.png' alt='' title='' /></div>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page6' id='page6'></a> <a style='color: white' href='YM2413ApplicationManual#page6'>Page 6</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-06.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='ii7' id='ii7'></a>
+</p><h3>(II-7) Register Map</h3>
+<table border='1' ><tr><td  valign='top'>Address
+</td><td  valign='top'>D<sub>7</sub>
+</td><td  valign='top'>D<sub>6</sub>
+</td><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>D<sub>3</sub>
+</td><td  valign='top'>D<sub>2</sub>
+</td><td  valign='top'>D<sub>1</sub>
+</td><td  valign='top'>D<sub>0</sub>
+</td><td  valign='top'>
+</td></tr><tr><td  valign='top'><a href='YM2413ApplicationManual#iii12'>00</a>
+</td><td rowspan='2'  valign='top'>AM
+</td><td rowspan='2'  valign='top'>VIB
+</td><td rowspan='2'  valign='top'>EG-TYP
+</td><td rowspan='2'  valign='top'>KSR
+</td><td colspan='4' rowspan='2'  valign='top'>MUL
+</td><td rowspan='8'  valign='top'>User Tone Register<br /><br />(c):Carrier<br />(m): Modulator
+</td></tr><tr><td  valign='top'><a href='YM2413ApplicationManual#iii12'>01</a>
+</td></tr><tr><td  valign='top'><a href='YM2413ApplicationManual#iii13'>02</a>
+</td><td colspan='2' rowspan='2'  valign='top'>KSL
+</td><td colspan='6'  valign='top'>TL
+</td></tr><tr><td  valign='top'><a href='YM2413ApplicationManual#iii13'>03</a>
+</td><td  valign='top'>
+</td><td  valign='top'>DC
+</td><td  valign='top'>DM
+</td><td colspan='3'  valign='top'>FB
+</td></tr><tr><td  valign='top'><a href='YM2413ApplicationManual#iii14'>04</a>
+</td><td colspan='4' rowspan='2'  valign='top'>AR
+</td><td colspan='4' rowspan='2'  valign='top'>DR
+</td></tr><tr><td  valign='top'><a href='YM2413ApplicationManual#iii14'>05</a>
+</td></tr><tr><td  valign='top'><a href='YM2413ApplicationManual#iii15'>06</a>
+</td><td colspan='4' rowspan='2'  valign='top'>SL
+</td><td colspan='4' rowspan='2'  valign='top'>RR
+</td></tr><tr><td  valign='top'><a href='YM2413ApplicationManual#iii15'>07</a>
+</td></tr><tr><td  valign='top'><a href='YM2413ApplicationManual#iii17'>0E</a>
+</td><td colspan='2'  valign='top'>
+</td><td  valign='top'>R
+</td><td  valign='top'>BD
+</td><td  valign='top'>SD
+</td><td  valign='top'>TOM
+</td><td  valign='top'>T-CY
+</td><td  valign='top'>HH
+</td><td  valign='top'>Rhythm Control
+</td></tr><tr><td  valign='top'><a href='YM2413ApplicationManual#iii11'>0F</a>
+</td><td colspan='8'  valign='top'>TEST
+</td><td  valign='top'>OPLL Test Data (Normal &lsquo;0&prime;)
+</td></tr><tr><td  valign='top'><a href='YM2413ApplicationManual#iii16'>10~18</a>
+</td><td colspan='8'  valign='top'>F-Num. 0~7
+</td><td  valign='top'>F-Number LSB 8 bits
+</td></tr><tr><td  valign='top'><a href='YM2413ApplicationManual#iii16'>20~28</a>
+</td><td colspan='2'  valign='top'>
+</td><td  valign='top'>SUS ON/OFF
+</td><td  valign='top'>KEY ON/OFF
+</td><td colspan='3'  valign='top'>BLOCK 0~2
+</td><td  valign='top'>F-Num. 8
+</td><td  valign='top'>F-Number MSB, octave set<br />Key ON/OFF register<br />Sustain ON/OFF register
+</td></tr><tr><td  valign='top'><a href='YM2413ApplicationManual#iii18'>30~38</a>
+</td><td colspan='4'  valign='top'>INST
+</td><td colspan='4'  valign='top'>VOL
+</td><td  valign='top'>Instruments Selection and Volume Register
+</td></tr></table>
+<p class='vspace'>Register map for Rhythm mode (addr. $0E D<sub>5</sub> = &lsquo;H&rsquo;)
+</p>
+<table border='1' ><tr><td  valign='top'>Address
+</td><td  valign='top'>D<sub>7</sub>
+</td><td  valign='top'>D<sub>6</sub>
+</td><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>D<sub>3</sub>
+</td><td  valign='top'>D<sub>2</sub>
+</td><td  valign='top'>D<sub>1</sub>
+</td><td  valign='top'>D<sub>0</sub>
+</td><td  valign='top'>
+</td></tr><tr><td  valign='top'>36
+</td><td colspan='4'  valign='top'>
+</td><td colspan='4'  valign='top'>BD-VOL
+</td><td rowspan='3'  valign='top'>Rhythm volume register
+</td></tr><tr><td  valign='top'>37
+</td><td colspan='4'  valign='top'>HH-VOL
+</td><td colspan='4'  valign='top'>SD-VOL
+</td></tr><tr><td  valign='top'>38
+</td><td colspan='4'  valign='top'>TOM-VOL
+</td><td colspan='4'  valign='top'>T-CY-VOL
+</td></tr></table>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page7' id='page7'></a> <a style='color: white' href='YM2413ApplicationManual#page7'>Page 7</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-07.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'>Register Contents
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td  valign='top'>
+</td><td  valign='top'>Address
+</td><td  valign='top'>Bit
+</td><td  valign='top'>
+</td></tr><tr><td rowspan='5'  valign='top'>1
+</td><td rowspan='5'  valign='top'>00 (m)<br />01 (c)
+</td><td  valign='top'>D<sub>7</sub>
+</td><td  valign='top'>Amplitude modulation ON/OFF switch
+</td></tr><tr><td  valign='top'>D<sub>6</sub>
+</td><td  valign='top'>Vibrato ON/OFF switch
+</td></tr><tr><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>Sustained tone/decaying tone switch. 0: Percussive tone 1: sustained tone
+</td></tr><tr><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>RATE key scale
+</td></tr><tr><td  valign='top'>D<sub>0</sub>~D<sub>3</sub>
+</td><td  valign='top'>Controls Multiple sample wave-harmonics relationship
+</td></tr><tr><td  valign='top'>2
+</td><td  valign='top'>02 (m)<br />03 (c)
+</td><td  valign='top'>D<sub>6</sub> D<sub>7</sub>
+</td><td  valign='top'>LEVEL key scale
+</td></tr><tr><td  valign='top'>3
+</td><td  valign='top'>02
+</td><td  valign='top'>D<sub>0</sub>~D<sub>5</sub>
+</td><td  valign='top'>Modulator total level. Modulation index control
+</td></tr><tr><td rowspan='2'  valign='top'>4
+</td><td rowspan='2'  valign='top'>03
+</td><td  valign='top'>D<sub>4</sub> (c)<br />D<sub>5</sub> (m)
+</td><td  valign='top'>Carrier and modulated wave distortion waveform (flat wave rectification) ON/OFF switch
+</td></tr><tr><td  valign='top'>D<sub>0</sub>~D<sub>2</sub>
+</td><td  valign='top'>FM feedback constant (m)
+</td></tr><tr><td rowspan='2'  valign='top'>5
+</td><td  valign='top'>rowspan=2:)04 (m)<br />05 (c)
+</td><td  valign='top'>D<sub>4</sub>~D<sub>7</sub>
+</td><td  valign='top'>Attack envelope change rate control
+</td></tr><tr><td  valign='top'>D<sub>0</sub>~D<sub>3</sub>
+</td><td  valign='top'>Decay envelope change rate control
+</td></tr><tr><td rowspan='2'  valign='top'>6
+</td><td rowspan='2'  valign='top'>06 (m)<br />07 (c)
+</td><td  valign='top'>D<sub>4</sub>~D<sub>7</sub>
+</td><td  valign='top'>Indication of decay-sustain level
+</td></tr><tr><td  valign='top'>D<sub>0</sub>~D<sub>3</sub>
+</td><td  valign='top'>Release envelope change rate control
+</td></tr><tr><td rowspan='2'  valign='top'>7
+</td><td rowspan='2'  valign='top'>0E
+</td><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>Rhythm sound mode selection. 1: Rhythm sound mode 0: Melody sound mode
+</td></tr><tr><td  valign='top'>D<sub>0</sub>~D<sub>4</sub>
+</td><td  valign='top'>Rhythm instruments ON/OFF switch
+</td></tr><tr><td  valign='top'>8
+</td><td  valign='top'>10~18
+</td><td  valign='top'>D<sub>0</sub>~D<sub>7</sub>
+</td><td  valign='top'>F-Number LSB 8 bits
+</td></tr><tr><td rowspan='4'  valign='top'>9
+</td><td rowspan='4'  valign='top'>20~28
+</td><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>Sustain ON/OFF switch
+</td></tr><tr><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>Key ON/OFF switch
+</td></tr><tr><td  valign='top'>D<sub>1</sub>~D<sub>3</sub>
+</td><td  valign='top'>Octave setting
+</td></tr><tr><td  valign='top'>D<sub>0</sub>
+</td><td  valign='top'>F-Number MSB
+</td></tr><tr><td rowspan='2'  valign='top'>10
+</td><td rowspan='2'  valign='top'>30~38
+</td><td  valign='top'>D<sub>4</sub>~D<sub>7</sub>
+</td><td  valign='top'>Instruments selection
+</td></tr><tr><td  valign='top'>D<sub>0</sub>~D<sub>3</sub>
+</td><td  valign='top'>Volume data
+</td></tr></table>
+<p class='vspace'>Tone Data
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td  valign='top'>INST
+</td><td  valign='top'>Instrument
+</td></tr><tr><td  valign='top'>0
+</td><td  valign='top'>Original
+</td></tr><tr><td  valign='top'>1
+</td><td  valign='top'>Violin
+</td></tr><tr><td  valign='top'>2
+</td><td  valign='top'>Guitar
+</td></tr><tr><td  valign='top'>3
+</td><td  valign='top'>Piano
+</td></tr><tr><td  valign='top'>4
+</td><td  valign='top'>Flute
+</td></tr><tr><td  valign='top'>5
+</td><td  valign='top'>Clarinet
+</td></tr><tr><td  valign='top'>6
+</td><td  valign='top'>Oboe
+</td></tr><tr><td  valign='top'>7
+</td><td  valign='top'>Trumpet
+</td></tr><tr><td  valign='top'>8
+</td><td  valign='top'>Organ
+</td></tr><tr><td  valign='top'>9
+</td><td  valign='top'>Horn
+</td></tr><tr><td  valign='top'>10
+</td><td  valign='top'>Synthesizer
+</td></tr><tr><td  valign='top'>11
+</td><td  valign='top'>Harpsichord
+</td></tr><tr><td  valign='top'>12
+</td><td  valign='top'>Vibraphone
+</td></tr><tr><td  valign='top'>13
+</td><td  valign='top'>Synthesizer Bass
+</td></tr><tr><td  valign='top'>14
+</td><td  valign='top'>Acoustic Bass
+</td></tr><tr><td  valign='top'>15
+</td><td  valign='top'>Electric Guitar
+</td></tr></table>
+<div class='vspace'></div>
+<table border='1' ><tr><td  valign='top'>BD
+</td><td  valign='top'>Bass Drum
+</td></tr><tr><td  valign='top'>SD
+</td><td  valign='top'>Snare Drum
+</td></tr><tr><td  valign='top'>TOM
+</td><td  valign='top'>Tom-tom
+</td></tr><tr><td  valign='top'>T-CY
+</td><td  valign='top'>Top Cymbal
+</td></tr><tr><td  valign='top'>HH
+</td><td  valign='top'>High Hat
+</td></tr></table>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page8' id='page8'></a> <a style='color: white' href='YM2413ApplicationManual#page8'>Page 8</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-08.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='iii' id='iii'></a>
+</p><h2>III. Description of Operation</h2>
+<p>All functions of the OPLL are controlled by data written in a register array by the processor. The data specifies the sound envelope shape, the degree of modulation, frequency, and output mode, etc. A complete set of data defines the sound as that of a piano or violin, etc. For the use of complex varieties of data sets se &ldquo;Synthesis of music sounds&rdquo;.
+</p>
+<p class='vspace'><a name='iii1' id='iii1'></a>
+</p><h3>(III-1) Registers</h3>
+<p>A register comprises an area of 271 bits, as shown in the address map II-7. The address referred to here is the sub-address assigned to each operator of the OPLL. Musical sound data will be written into a register referred to by the sub-address. To store a data in the OPLL, we send a sub-address and then the sound data. If we access a location having the same sub-address many times, we only have to send the sub-address the first time. In subsequent accesses, we can send sound data alone to renew old data.
+</p>
+<p class='vspace'>All registers are cleared to 0 by initialization (initial clear <span class='bar'>IC</span> terminal = 0).
+</p>
+<p class='vspace'><a name='iii11' id='iii11'></a>
+</p><h4>(III-1-1) TEST: Address [$0F]</h4>
+<p>This address is established to test the LSI.
+</p>
+<p class='vspace'>Normally all addresses are 0.
+</p>
+<p class='vspace'><a name='iii12' id='iii12'></a>
+</p><h4>(III-1-2) AM/VIB/EG-TYP/KSR/MUL: Address [$00~$01]</h4>
+<p>This register controls the multiplying factor that converts F-number into the carrier ($01) and modulator ($00) frequencies which matches the sound frequency components, and the envelope shape etc.
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td  valign='top'>D<sub>7</sub>
+</td><td  valign='top'>D<sub>6</sub>
+</td><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>D<sub>3</sub>
+</td><td  valign='top'>D<sub>2</sub>
+</td><td  valign='top'>D<sub>1</sub>
+</td><td  valign='top'>D<sub>0</sub>
+</td></tr><tr><td rowspan='2'  valign='top'><a href='YM2413ApplicationManual#iii12am'>AM</a>
+</td><td rowspan='2'  valign='top'><a href='YM2413ApplicationManual#iii12vib'>VIB</a>
+</td><td rowspan='2'  valign='top'><a href='YM2413ApplicationManual#iii12eg-typ'>EG-TYP</a>
+</td><td rowspan='2'  valign='top'><a href='YM2413ApplicationManual#iii12ksr'>KSR</a>
+</td><td colspan='4'  valign='top'><a href='YM2413ApplicationManual#iii12mul'>MUL</a>
+</td></tr><tr><td  valign='top'>2<sup>3</sup>
+</td><td  valign='top'>2<sup>2</sup>
+</td><td  valign='top'>2<sup>1</sup>
+</td><td  valign='top'>2<sup>0</sup>
+</td></tr></table>
+<p class='vspace'><a name='iii12mul' id='iii12mul'></a>
+</p><ul><li>D<sub>0</sub>~D<sub>3</sub> (MUL): The frequencies of the carrier wave and the modulated wave are controlled according to the multiplying factors in <a href='YM2413ApplicationManual#tableiii1'>Table III-1</a>.
+</li></ul><p class='vspace'>&lt;Example&gt;
+</p>
+<p class='vspace'>F(t) = E sin (ω<sub>f</sub>t + I sin (7 ω<sub>f</sub>t))
+</p>
+<div class='vspace'></div><dl><dd><ul><li>Frequency according to F-number = ω<sub>f</sub>t
+</li><li>Carrier MUL = 1
+</li><li>Modulator MUL = 7
+</li></ul></dd></dl><p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page9' id='page9'></a> <a style='color: white' href='YM2413ApplicationManual#page9'>Page 9</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-09.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='tableiii1' id='tableiii1'></a>
+Table III-1 Multiplying factors
+</p>
+<table border='1' ><tr><td  valign='top'>MUL
+</td><td  valign='top'>Multiplying factor
+</td></tr><tr><td  valign='top'>0
+</td><td  valign='top'>½
+</td></tr><tr><td  valign='top'>1
+</td><td  valign='top'>1
+</td></tr><tr><td  valign='top'>2
+</td><td  valign='top'>2
+</td></tr><tr><td  valign='top'>3
+</td><td  valign='top'>3
+</td></tr><tr><td  valign='top'>4
+</td><td  valign='top'>4
+</td></tr><tr><td  valign='top'>5
+</td><td  valign='top'>5
+</td></tr><tr><td  valign='top'>6
+</td><td  valign='top'>6
+</td></tr><tr><td  valign='top'>7
+</td><td  valign='top'>7
+</td></tr><tr><td  valign='top'>8
+</td><td  valign='top'>8
+</td></tr><tr><td  valign='top'>9
+</td><td  valign='top'>9
+</td></tr><tr><td  valign='top'>A
+</td><td  valign='top'>10
+</td></tr><tr><td  valign='top'>B
+</td><td  valign='top'>10
+</td></tr><tr><td  valign='top'>C
+</td><td  valign='top'>12
+</td></tr><tr><td  valign='top'>D
+</td><td  valign='top'>12
+</td></tr><tr><td  valign='top'>E
+</td><td  valign='top'>15
+</td></tr><tr><td  valign='top'>F
+</td><td  valign='top'>15
+</td></tr></table>
+<p class='vspace'><a name='iii12ksr' id='iii12ksr'></a>
+</p><ul><li>D<sub>4</sub> (KSR): This bit specifies the key scale of RATE.
+</li></ul><p class='vspace'>Since almost all musical steps become high for natural instruments, the sound can quickly change to high or low. This is accomplished by the key scale of RATE. Values in <a class='createlinktext' rel='nofollow' href='http://www.smspower.org/maxim/Documents/Tableiii2?action=edit'>Table III-2</a><a rel='nofollow' class='createlink' href='http://www.smspower.org/maxim/Documents/Tableiii2?action=edit'>?</a> include the speed offset for the musical steps. Therefore, the actual RATE set for the ADSR will be these values which include the offset.
+</p>
+<p class='vspace'>RATE = 4 × R + R<sub>ks</sub>
+</p>
+<div class='vspace'></div><dl><dd><ul><li>R is the set value for ADSR
+</li><li>R<sub>ks</sub> is the key scale offset value
+</li><li>Note that when R=0, RATE=0
+</li></ul></dd></dl><p class='vspace'><a name='tableiii2' id='tableiii2'></a>
+Table III-2
+</p>
+<table border='1' ><tr><td colspan='2'  valign='top'>0
+</td><td colspan='2'  valign='top'>1
+</td><td colspan='2'  valign='top'>2
+</td><td colspan='2'  valign='top'>3
+</td><td colspan='2'  valign='top'>4
+</td><td colspan='2'  valign='top'>5
+</td><td colspan='2'  valign='top'>6
+</td><td colspan='2'  valign='top'>7
+</td><td  valign='top'>Octave
+</td></tr><tr><td colspan='2'  valign='top'>0
+</td><td colspan='2'  valign='top'>1
+</td><td colspan='2'  valign='top'>2
+</td><td colspan='2'  valign='top'>3
+</td><td colspan='2'  valign='top'>4
+</td><td colspan='2'  valign='top'>5
+</td><td colspan='2'  valign='top'>6
+</td><td colspan='2'  valign='top'>7
+</td><td  valign='top'>BLOCK Data
+</td></tr><tr><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>F-Num MSB
+</td></tr><tr><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>2
+</td><td  valign='top'>2
+</td><td  valign='top'>2
+</td><td  valign='top'>2
+</td><td  valign='top'>3
+</td><td  valign='top'>3
+</td><td  valign='top'>3
+</td><td  valign='top'>3
+</td><td  valign='top'>D<sub>4</sub> = 0 key scale
+</td></tr><tr><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>2
+</td><td  valign='top'>3
+</td><td  valign='top'>4
+</td><td  valign='top'>5
+</td><td  valign='top'>6
+</td><td  valign='top'>7
+</td><td  valign='top'>8
+</td><td  valign='top'>9
+</td><td  valign='top'>10
+</td><td  valign='top'>11
+</td><td  valign='top'>12
+</td><td  valign='top'>13
+</td><td  valign='top'>14
+</td><td  valign='top'>15
+</td><td  valign='top'>D<sub>4</sub> = 1 key scale
+</td></tr></table>
+<p class='vspace'><a name='iii12eg-typ' id='iii12eg-typ'></a>
+</p><ul><li>D<sub>5</sub> (EG-TYP): Switching between sustained tone and Percussive tone.
+</li></ul><p class='vspace'>When D<sub>5</sub> = &lsquo;0&prime; it will be percussive tone. When D<sub>5</sub> = &lsquo;1&prime; it will be sustained tone. These sound modes are different in that the RELEASE RATE usage differs. The difference is shown in <a href='YM2413ApplicationManual#figiii1'>Figure III-1</a>.
+</p>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page10' id='page10'></a> <a style='color: white' href='YM2413ApplicationManual#page10'>Page 10</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-10.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='figiii1' id='figiii1'></a>
+</p>
+<p class='vspace'>Percussive tone (D<sub>5</sub> = 0)
+</p>
+<div class='vspace'></div><div><img src='../uploads/Documents/percussivetone.png' alt='' title='' /></div>
+<p class='vspace'>Sustained tone (D<sub>5</sub> = 1)
+</p>
+<div class='vspace'></div><div><img src='../uploads/Documents/sustainedtone.png' alt='' title='' /></div>
+<p class='vspace'>Fig. III-1
+</p>
+<p class='vspace'><a name='iii12vib' id='iii12vib'></a>
+</p><ul><li>D<sub>4</sub> (VIB): Vibrato on/off switch. When this bit is &lsquo;1&prime;, vibrato will be applied to the slot. The frequency is 6.4 Hz (@ øM = 3.6 MHz).
+</li></ul><p class='vspace'><a name='iii12am' id='iii12am'></a>
+</p><ul><li>D<sub>7</sub> (AM): Amplitude modulation on/off switch. When this bit is &lsquo;1&prime;, amplitude modulation wil be epplied to the slot. The frequency is 3.7 Hz (@ øM = 3.6 MHz).
+</li></ul><p class='vspace'><a name='iii13' id='iii13'></a>
+</p><h4>(III-1-3) KSL/TL/DC/DM/FB: Address [$02~$03]</h4>
+<p>Total Level is used to control the modulation index (tone) by adding attenuation to the output of the envelope generator. Level key scale (KSL) ensures, like the key scale of RATE, that the output level of natural instruments falls as the pitch of sound rises.
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td  valign='top'>
+</td><td  valign='top'>D<sub>7</sub>
+</td><td  valign='top'>D<sub>6</sub>
+</td><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>D<sub>3</sub>
+</td><td  valign='top'>D<sub>2</sub>
+</td><td  valign='top'>D<sub>1</sub>
+</td><td  valign='top'>D<sub>0</sub>
+</td></tr><tr><td  valign='top'>$02
+</td><td colspan='2' rowspan='2'  valign='top'><a href='YM2413ApplicationManual#iii13ksl'>KSL</a>
+</td><td colspan='6'  valign='top'><a href='YM2413ApplicationManual#iii13tl'>TL</a>
+</td></tr><tr><td  valign='top'>$03
+</td><td  valign='top'>
+</td><td  valign='top'><a href='YM2413ApplicationManual#iii13dc'>DC</a>
+</td><td  valign='top'><a href='YM2413ApplicationManual#iii13dm'>DM</a>
+</td><td colspan='3'  valign='top'><a href='YM2413ApplicationManual#iii13fb'>FB</a>
+</td></tr></table>
+<p class='vspace'><a name='iii13tl' id='iii13tl'></a>
+</p><ul><li>D<sub>0</sub>~D<sub>5</sub> (TL): The minimum resolution of the attenuation level is 0.75 dB and the sound level can be reduced down to 47.25 dB.
+</li></ul><p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page11' id='page11'></a> <a style='color: white' href='YM2413ApplicationManual#page11'>Page 11</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-11.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='tableiii13' id='tableiii13'></a>
+Table III-3 Total level
+</p>
+<table border='1' ><tr><td  valign='top'>
+</td><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>D<sub>3</sub>
+</td><td  valign='top'>D<sub>2</sub>
+</td><td  valign='top'>D<sub>1</sub>
+</td><td  valign='top'>D<sub>0</sub>
+</td></tr><tr><td  valign='top'>Attenuation level
+</td><td  valign='top'>24 dB
+</td><td  valign='top'>12 dB
+</td><td  valign='top'>6 dB
+</td><td  valign='top'>3 dB
+</td><td  valign='top'>1.5 dB
+</td><td  valign='top'>0.75 dB
+</td></tr></table>
+<p class='vspace'><a name='iii13ksl' id='iii13ksl'></a>
+</p><ul><li>D<sub>6</sub>~D<sub>7</sub> (KSL): This bit controls the level of key scaling. In key scale mode, the level of attenuation increases as pitch rises, to 1.5 dB/oct, 3 dB/oct, 6 dB/oct, and 0 dB/oct.
+</li></ul><p class='vspace'><a name='tableiii4' id='tableiii4'></a>
+Table III-4
+</p>
+<table border='1' ><tr><td  valign='top'>D<sub>7</sub>
+</td><td  valign='top'>D<sub>6</sub>
+</td><td  valign='top'>Attenuation rate
+</td></tr><tr><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0 dB/oct
+</td></tr><tr><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1.5 dB/oct
+</td></tr><tr><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>3 dB/oct
+</td></tr><tr><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>6 dB/oct
+</td></tr></table>
+<p class='vspace'><a name='tableiii5' id='tableiii5'></a>
+Table III-5 Attenuation at each F-Number at 3 dB/OCT
+</p>
+<table border='1' ><tr><td rowspan='2'  valign='top'>OCT
+</td><td colspan='16'  valign='top'>F-Number
+</td></tr><tr><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>2
+</td><td  valign='top'>3
+</td><td  valign='top'>4
+</td><td  valign='top'>5
+</td><td  valign='top'>6
+</td><td  valign='top'>7
+</td><td  valign='top'>8
+</td><td  valign='top'>9
+</td><td  valign='top'>10
+</td><td  valign='top'>11
+</td><td  valign='top'>12
+</td><td  valign='top'>13
+</td><td  valign='top'>14
+</td><td  valign='top'>15
+</td></tr><tr><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td></tr><tr><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0.75
+</td><td  valign='top'>1.125
+</td><td  valign='top'>1.5
+</td><td  valign='top'>1.875
+</td><td  valign='top'>2.25
+</td><td  valign='top'>2.525
+</td><td  valign='top'>3
+</td></tr><tr><td  valign='top'>2
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1.125
+</td><td  valign='top'>1.875
+</td><td  valign='top'>2.525
+</td><td  valign='top'>3
+</td><td  valign='top'>3.75
+</td><td  valign='top'>4.125
+</td><td  valign='top'>4.5
+</td><td  valign='top'>4.875
+</td><td  valign='top'>5.25
+</td><td  valign='top'>5.625
+</td><td  valign='top'>6
+</td></tr><tr><td  valign='top'>3
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1.875
+</td><td  valign='top'>3
+</td><td  valign='top'>4.125
+</td><td  valign='top'>4.875
+</td><td  valign='top'>5.625
+</td><td  valign='top'>6
+</td><td  valign='top'>6.75
+</td><td  valign='top'>7.125
+</td><td  valign='top'>7.5
+</td><td  valign='top'>7.875
+</td><td  valign='top'>8.25
+</td><td  valign='top'>8.625
+</td><td  valign='top'>9
+</td></tr><tr><td  valign='top'>4
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>3
+</td><td  valign='top'>4.875
+</td><td  valign='top'>6
+</td><td  valign='top'>7.125
+</td><td  valign='top'>7.875
+</td><td  valign='top'>8.625
+</td><td  valign='top'>9
+</td><td  valign='top'>9.75
+</td><td  valign='top'>10.125
+</td><td  valign='top'>10.5
+</td><td  valign='top'>10.875
+</td><td  valign='top'>11.25
+</td><td  valign='top'>11.625
+</td><td  valign='top'>12
+</td></tr><tr><td  valign='top'>5
+</td><td  valign='top'>0
+</td><td  valign='top'>3
+</td><td  valign='top'>6
+</td><td  valign='top'>7.875
+</td><td  valign='top'>9
+</td><td  valign='top'>10.125
+</td><td  valign='top'>10.875
+</td><td  valign='top'>11.625
+</td><td  valign='top'>12
+</td><td  valign='top'>12.75
+</td><td  valign='top'>13.125
+</td><td  valign='top'>13.5
+</td><td  valign='top'>13.875
+</td><td  valign='top'>14.25
+</td><td  valign='top'>14.825
+</td><td  valign='top'>15
+</td></tr><tr><td  valign='top'>6
+</td><td  valign='top'>0
+</td><td  valign='top'>6
+</td><td  valign='top'>9
+</td><td  valign='top'>10.875
+</td><td  valign='top'>12
+</td><td  valign='top'>13.125
+</td><td  valign='top'>13.875
+</td><td  valign='top'>14.825
+</td><td  valign='top'>15
+</td><td  valign='top'>15.75
+</td><td  valign='top'>16.125
+</td><td  valign='top'>16.5
+</td><td  valign='top'>16.875
+</td><td  valign='top'>17.25
+</td><td  valign='top'>17.625
+</td><td  valign='top'>18
+</td></tr><tr><td  valign='top'>7
+</td><td  valign='top'>0
+</td><td  valign='top'>9
+</td><td  valign='top'>12
+</td><td  valign='top'>13.875
+</td><td  valign='top'>15
+</td><td  valign='top'>16.125
+</td><td  valign='top'>16.875
+</td><td  valign='top'>17.625
+</td><td  valign='top'>18
+</td><td  valign='top'>18.75
+</td><td  valign='top'>19.125
+</td><td  valign='top'>19.5
+</td><td  valign='top'>19.875
+</td><td  valign='top'>20.25
+</td><td  valign='top'>20.625
+</td><td  valign='top'>21
+</td></tr></table>
+<p>Unit: dB
+</p>
+<p class='vspace'>Notes:
+</p><dl><dd><ul><li>F-Number is the value of the four MSBs.
+</li><li>Half of the above data at 1.5 dB/oct
+</li><li>Double of the above at 6 dB/oct
+</li></ul></dd></dl><p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page12' id='page12'></a> <a style='color: white' href='YM2413ApplicationManual#page12'>Page 12</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-12.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='iii13dm' id='iii13dm'></a>
+</p><ul><li>$03: D<sub>3</sub> (DM): The modulated wave is rectified to half wave.
+</li></ul><p class='vspace'><a name='iii13dc' id='iii13dc'></a>
+</p><ul><li>$03: D<sub>4</sub> (DC): The carrier wave is rectified to half wave.
+</li></ul><p class='vspace'><a name='iii13fb' id='iii13fb'></a>
+</p><ul><li>$03: D<sub>0</sub>~D<sub>2</sub> (FB): For the modulated wave of the first slot&rsquo;s feedback FM modulation.
+</li></ul><p class='vspace'><a name='tableiii6' id='tableiii6'></a>
+Table III-6 Modulation index
+</p>
+<table border='1' ><tr><td  valign='top'>
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>2
+</td><td  valign='top'>3
+</td><td  valign='top'>4
+</td><td  valign='top'>5
+</td><td  valign='top'>6
+</td><td  valign='top'>7
+</td></tr><tr><td  valign='top'>Modulation index
+</td><td  valign='top'>0
+</td><td  valign='top'>π/16
+</td><td  valign='top'>π/8
+</td><td  valign='top'>π/4
+</td><td  valign='top'>π/2
+</td><td  valign='top'>π
+</td><td  valign='top'>2π
+</td><td  valign='top'>4π
+</td></tr></table>
+<p class='vspace'><a name='iii14' id='iii14'></a>
+</p><h4>(III-1-4) AR/DR: Address [$04~$05]</h4>
+<p>Attack Rate defines the attack time of the sounds, and Decay Rate the decay time. The Rates are set as given in <a href='YM2413ApplicationManual#tableiii7'>Table III-7</a>.
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td rowspan='2'  valign='top'>
+</td><td  valign='top'>D<sub>7</sub>
+</td><td  valign='top'>D<sub>6</sub>
+</td><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>D<sub>3</sub>
+</td><td  valign='top'>D<sub>2</sub>
+</td><td  valign='top'>D<sub>1</sub>
+</td><td  valign='top'>D<sub>0</sub>
+</td><td rowspan='2'  valign='top'>
+</td></tr><tr><td colspan='4'  valign='top'>AR
+</td><td colspan='4'  valign='top'>DR
+</td></tr><tr><td  valign='top'>$04
+</td><td  valign='top'>2<sup>3</sup>
+</td><td  valign='top'>2<sup>2</sup>
+</td><td  valign='top'>2<sup>1</sup>
+</td><td  valign='top'>2<sup>0</sup>
+</td><td  valign='top'>2<sup>3</sup>
+</td><td  valign='top'>2<sup>2</sup>
+</td><td  valign='top'>2<sup>1</sup>
+</td><td  valign='top'>2<sup>0</sup>
+</td><td  valign='top'>Modulator
+</td></tr><tr><td  valign='top'>$05
+</td><td  valign='top'>2<sup>3</sup>
+</td><td  valign='top'>2<sup>2</sup>
+</td><td  valign='top'>2<sup>1</sup>
+</td><td  valign='top'>2<sup>0</sup>
+</td><td  valign='top'>2<sup>3</sup>
+</td><td  valign='top'>2<sup>2</sup>
+</td><td  valign='top'>2<sup>1</sup>
+</td><td  valign='top'>2<sup>0</sup>
+</td><td  valign='top'>Carrier
+</td></tr></table>
+<p class='vspace'><a name='iii15' id='iii15'></a>
+</p><h4>(III-1-5) SL/RR: Address [$06~$07]</h4>
+<p>Sustain Level is the critical point that, when sustaining sound has been attenuated to the prescribed level, the level is maintained thereafter. With percussive tone, it is the critical point of change from decay mode to release mode.
+</p>
+<p class='vspace'>Release Rate is the disappearing rate of sustaining sounds after key OFF. For percussive tone, attenuation above the sustain level is expressed with decay rate and attenuation below the sustain level with release rate.
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td rowspan='2'  valign='top'>
+</td><td  valign='top'>D<sub>7</sub>
+</td><td  valign='top'>D<sub>6</sub>
+</td><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>D<sub>3</sub>
+</td><td  valign='top'>D<sub>2</sub>
+</td><td  valign='top'>D<sub>1</sub>
+</td><td  valign='top'>D<sub>0</sub>
+</td><td rowspan='2'  valign='top'>
+</td></tr><tr><td colspan='4'  valign='top'>SL
+</td><td colspan='4'  valign='top'>RR
+</td></tr><tr><td  valign='top'>$06
+</td><td  valign='top'>24 dB
+</td><td  valign='top'>12 dB
+</td><td  valign='top'>6 dB
+</td><td  valign='top'>3 dB
+</td><td  valign='top'>2<sup>3</sup>
+</td><td  valign='top'>2<sup>2</sup>
+</td><td  valign='top'>2<sup>1</sup>
+</td><td  valign='top'>2<sup>0</sup>
+</td><td  valign='top'>Modulator
+</td></tr><tr><td  valign='top'>$07
+</td><td  valign='top'>24 dB
+</td><td  valign='top'>12 dB
+</td><td  valign='top'>6 dB
+</td><td  valign='top'>3 dB
+</td><td  valign='top'>2<sup>3</sup>
+</td><td  valign='top'>2<sup>2</sup>
+</td><td  valign='top'>2<sup>1</sup>
+</td><td  valign='top'>2<sup>0</sup>
+</td><td  valign='top'>Carrier
+</td></tr></table>
+<div class='vspace'></div><ul><li>Attenuation times of the release rate are the same as that of the decay rate.
+</li></ul><p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page13' id='page13'></a> <a style='color: white' href='YM2413ApplicationManual#page13'>Page 13</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-13.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='tableiii7' id='tableiii7'></a>
+Table III-7 Attack and decay times in relation to RATE
+</p>
+<p class='vspace'>RATE given below is that of the after key scale. RATE = RM × 4 + RL
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td colspan='2'  valign='top'>RATE
+</td><td colspan='2'  valign='top'>EG decay time
+</td><td colspan='2'  valign='top'>EG attack time
+</td></tr><tr><td  valign='top'>RM
+</td><td  valign='top'>RL
+</td><td  valign='top'>0 dB - 40 dB
+</td><td  valign='top'>10% - 90%
+</td><td  valign='top'>0 dB - 40 dB
+</td><td  valign='top'>10% - 90%
+</td></tr><tr><td  valign='top'>15
+</td><td  valign='top'>3
+</td><td  valign='top'>1.27
+</td><td  valign='top'>0.52
+</td><td  valign='top'>0.00
+</td><td  valign='top'>0.00
+</td></tr><tr><td  valign='top'>15
+</td><td  valign='top'>2
+</td><td  valign='top'>1.27
+</td><td  valign='top'>0.52
+</td><td  valign='top'>0.00
+</td><td  valign='top'>0.00
+</td></tr><tr><td  valign='top'>15
+</td><td  valign='top'>1
+</td><td  valign='top'>1.27
+</td><td  valign='top'>0.52
+</td><td  valign='top'>0.00
+</td><td  valign='top'>0.00
+</td></tr><tr><td  valign='top'>15
+</td><td  valign='top'>0
+</td><td  valign='top'>1.27
+</td><td  valign='top'>0.52
+</td><td  valign='top'>0.00
+</td><td  valign='top'>0.00
+</td></tr><tr><td  valign='top'>14
+</td><td  valign='top'>3
+</td><td  valign='top'>1.47
+</td><td  valign='top'>0.60
+</td><td  valign='top'>0.14
+</td><td  valign='top'>0.10
+</td></tr><tr><td  valign='top'>14
+</td><td  valign='top'>2
+</td><td  valign='top'>1.71
+</td><td  valign='top'>0.60
+</td><td  valign='top'>0.18
+</td><td  valign='top'>0.12
+</td></tr><tr><td  valign='top'>14
+</td><td  valign='top'>1
+</td><td  valign='top'>2.05
+</td><td  valign='top'>0.82
+</td><td  valign='top'>0.22
+</td><td  valign='top'>0.14
+</td></tr><tr><td  valign='top'>14
+</td><td  valign='top'>0
+</td><td  valign='top'>2.55
+</td><td  valign='top'>1.03
+</td><td  valign='top'>0.28
+</td><td  valign='top'>0.18
+</td></tr><tr><td  valign='top'>13
+</td><td  valign='top'>3
+</td><td  valign='top'>2.94
+</td><td  valign='top'>1.21
+</td><td  valign='top'>0.30
+</td><td  valign='top'>0.22
+</td></tr><tr><td  valign='top'>13
+</td><td  valign='top'>2
+</td><td  valign='top'>3.42
+</td><td  valign='top'>1.37
+</td><td  valign='top'>0.34
+</td><td  valign='top'>0.22
+</td></tr><tr><td  valign='top'>13
+</td><td  valign='top'>1
+</td><td  valign='top'>4.10
+</td><td  valign='top'>1.65
+</td><td  valign='top'>0.42
+</td><td  valign='top'>0.26
+</td></tr><tr><td  valign='top'>13
+</td><td  valign='top'>0
+</td><td  valign='top'>5.11
+</td><td  valign='top'>2.05
+</td><td  valign='top'>0.50
+</td><td  valign='top'>0.32
+</td></tr><tr><td  valign='top'>12
+</td><td  valign='top'>3
+</td><td  valign='top'>5.87
+</td><td  valign='top'>2.41
+</td><td  valign='top'>0.54
+</td><td  valign='top'>0.36
+</td></tr><tr><td  valign='top'>12
+</td><td  valign='top'>2
+</td><td  valign='top'>6.84
+</td><td  valign='top'>2.74
+</td><td  valign='top'>0.60
+</td><td  valign='top'>0.38
+</td></tr><tr><td  valign='top'>12
+</td><td  valign='top'>1
+</td><td  valign='top'>8.21
+</td><td  valign='top'>3.30
+</td><td  valign='top'>0.70
+</td><td  valign='top'>0.44
+</td></tr><tr><td  valign='top'>12
+</td><td  valign='top'>0
+</td><td  valign='top'>10.22
+</td><td  valign='top'>4.10
+</td><td  valign='top'>0.84
+</td><td  valign='top'>0.54
+</td></tr><tr><td  valign='top'>11
+</td><td  valign='top'>3
+</td><td  valign='top'>11.75
+</td><td  valign='top'>4.03
+</td><td  valign='top'>0.97
+</td><td  valign='top'>0.64
+</td></tr><tr><td  valign='top'>11
+</td><td  valign='top'>2
+</td><td  valign='top'>13.60
+</td><td  valign='top'>5.47
+</td><td  valign='top'>1.13
+</td><td  valign='top'>0.72
+</td></tr><tr><td  valign='top'>11
+</td><td  valign='top'>1
+</td><td  valign='top'>16.41
+</td><td  valign='top'>6.60
+</td><td  valign='top'>1.37
+</td><td  valign='top'>0.84
+</td></tr><tr><td  valign='top'>11
+</td><td  valign='top'>0
+</td><td  valign='top'>20.44
+</td><td  valign='top'>8.21
+</td><td  valign='top'>1.69
+</td><td  valign='top'>1.09
+</td></tr><tr><td  valign='top'>10
+</td><td  valign='top'>3
+</td><td  valign='top'>23.49
+</td><td  valign='top'>9.65
+</td><td  valign='top'>1.93
+</td><td  valign='top'>1.29
+</td></tr><tr><td  valign='top'>10
+</td><td  valign='top'>2
+</td><td  valign='top'>27.36
+</td><td  valign='top'>10.94
+</td><td  valign='top'>2.25
+</td><td  valign='top'>1.45
+</td></tr><tr><td  valign='top'>10
+</td><td  valign='top'>1
+</td><td  valign='top'>32.03
+</td><td  valign='top'>13.19
+</td><td  valign='top'>2.74
+</td><td  valign='top'>1.69
+</td></tr><tr><td  valign='top'>10
+</td><td  valign='top'>0
+</td><td  valign='top'>40.07
+</td><td  valign='top'>16.41
+</td><td  valign='top'>3.30
+</td><td  valign='top'>2.17
+</td></tr><tr><td  valign='top'>9
+</td><td  valign='top'>3
+</td><td  valign='top'>46.99
+</td><td  valign='top'>19.31
+</td><td  valign='top'>3.86
+</td><td  valign='top'>2.57
+</td></tr><tr><td  valign='top'>9
+</td><td  valign='top'>2
+</td><td  valign='top'>54.71
+</td><td  valign='top'>12.80
+</td><td  valign='top'>4.51
+</td><td  valign='top'>2.98
+</td></tr><tr><td  valign='top'>9
+</td><td  valign='top'>1
+</td><td  valign='top'>65.65
+</td><td  valign='top'>26.39
+</td><td  valign='top'>5.47
+</td><td  valign='top'>3.30
+</td></tr><tr><td  valign='top'>9
+</td><td  valign='top'>0
+</td><td  valign='top'>81.74
+</td><td  valign='top'>32.03
+</td><td  valign='top'>6.76
+</td><td  valign='top'>4.34
+</td></tr><tr><td  valign='top'>8
+</td><td  valign='top'>3
+</td><td  valign='top'>93.97
+</td><td  valign='top'>38.62
+</td><td  valign='top'>7.72
+</td><td  valign='top'>5.15
+</td></tr><tr><td  valign='top'>8
+</td><td  valign='top'>2
+</td><td  valign='top'>109.42
+</td><td  valign='top'>43.77
+</td><td  valign='top'>9.01
+</td><td  valign='top'>5.79
+</td></tr><tr><td  valign='top'>8
+</td><td  valign='top'>1
+</td><td  valign='top'>131.31
+</td><td  valign='top'>52.78
+</td><td  valign='top'>10.94
+</td><td  valign='top'>6.76
+</td></tr><tr><td  valign='top'>8
+</td><td  valign='top'>0
+</td><td  valign='top'>163.49
+</td><td  valign='top'>65.65
+</td><td  valign='top'>13.52
+</td><td  valign='top'>8.69
+</td></tr><tr><td  valign='top'>7
+</td><td  valign='top'>3
+</td><td  valign='top'>187.95
+</td><td  valign='top'>77.24
+</td><td  valign='top'>15.45
+</td><td  valign='top'>10.30
+</td></tr><tr><td  valign='top'>7
+</td><td  valign='top'>2
+</td><td  valign='top'>218.84
+</td><td  valign='top'>87.54
+</td><td  valign='top'>18.02
+</td><td  valign='top'>11.59
+</td></tr><tr><td  valign='top'>7
+</td><td  valign='top'>1
+</td><td  valign='top'>262.61
+</td><td  valign='top'>185.56
+</td><td  valign='top'>21.00
+</td><td  valign='top'>13.52
+</td></tr><tr><td  valign='top'>7
+</td><td  valign='top'>0
+</td><td  valign='top'>326.98
+</td><td  valign='top'>131.31
+</td><td  valign='top'>27.03
+</td><td  valign='top'>17.30
+</td></tr><tr><td  valign='top'>6
+</td><td  valign='top'>3
+</td><td  valign='top'>375.98
+</td><td  valign='top'>154.40
+</td><td  valign='top'>30.90
+</td><td  valign='top'>20.60
+</td></tr><tr><td  valign='top'>6
+</td><td  valign='top'>2
+</td><td  valign='top'>437.69
+</td><td  valign='top'>175.07
+</td><td  valign='top'>36.04
+</td><td  valign='top'>23.17
+</td></tr><tr><td  valign='top'>6
+</td><td  valign='top'>1
+</td><td  valign='top'>525.22
+</td><td  valign='top'>211.12
+</td><td  valign='top'>43.77
+</td><td  valign='top'>27.03
+</td></tr><tr><td  valign='top'>6
+</td><td  valign='top'>0
+</td><td  valign='top'>653.95
+</td><td  valign='top'>262.61
+</td><td  valign='top'>54.87
+</td><td  valign='top'>34.76
+</td></tr><tr><td  valign='top'>5
+</td><td  valign='top'>3
+</td><td  valign='top'>751.79
+</td><td  valign='top'>308.96
+</td><td  valign='top'>61.79
+</td><td  valign='top'>41.19
+</td></tr><tr><td  valign='top'>5
+</td><td  valign='top'>2
+</td><td  valign='top'>875.37
+</td><td  valign='top'>350.15
+</td><td  valign='top'>72.89
+</td><td  valign='top'>46.34
+</td></tr><tr><td  valign='top'>5
+</td><td  valign='top'>1
+</td><td  valign='top'>1050.45
+</td><td  valign='top'>422.24
+</td><td  valign='top'>87.54
+</td><td  valign='top'>54.07
+</td></tr><tr><td  valign='top'>5
+</td><td  valign='top'>0
+</td><td  valign='top'>1307.91
+</td><td  valign='top'>525.22
+</td><td  valign='top'>108.13
+</td><td  valign='top'>69.51
+</td></tr><tr><td  valign='top'>4
+</td><td  valign='top'>3
+</td><td  valign='top'>1503.58
+</td><td  valign='top'>617.91
+</td><td  valign='top'>123.50
+</td><td  valign='top'>82.39
+</td></tr><tr><td  valign='top'>4
+</td><td  valign='top'>2
+</td><td  valign='top'>1750.75
+</td><td  valign='top'>700.30
+</td><td  valign='top'>144.48
+</td><td  valign='top'>92.69
+</td></tr><tr><td  valign='top'>4
+</td><td  valign='top'>1
+</td><td  valign='top'>2180.89
+</td><td  valign='top'>844.40
+</td><td  valign='top'>175.07
+</td><td  valign='top'>108.13
+</td></tr><tr><td  valign='top'>4
+</td><td  valign='top'>0
+</td><td  valign='top'>2615.82
+</td><td  valign='top'>1050.45
+</td><td  valign='top'>216.27
+</td><td  valign='top'>139.63
+</td></tr><tr><td  valign='top'>3
+</td><td  valign='top'>3
+</td><td  valign='top'>3007.16
+</td><td  valign='top'>1235.82
+</td><td  valign='top'>247.16
+</td><td  valign='top'>164.70
+</td></tr><tr><td  valign='top'>3
+</td><td  valign='top'>2
+</td><td  valign='top'>3501.49
+</td><td  valign='top'>1400.60
+</td><td  valign='top'>280.36
+</td><td  valign='top'>185.37
+</td></tr><tr><td  valign='top'>3
+</td><td  valign='top'>1
+</td><td  valign='top'>4201.79
+</td><td  valign='top'>1680.95
+</td><td  valign='top'>358.15
+</td><td  valign='top'>216.27
+</td></tr><tr><td  valign='top'>3
+</td><td  valign='top'>0
+</td><td  valign='top'>5231.64
+</td><td  valign='top'>1280.89
+</td><td  valign='top'>432.54
+</td><td  valign='top'>278.06
+</td></tr><tr><td  valign='top'>2
+</td><td  valign='top'>3
+</td><td  valign='top'>6014.32
+</td><td  valign='top'>2471.64
+</td><td  valign='top'>494.33
+</td><td  valign='top'>329.55
+</td></tr><tr><td  valign='top'>2
+</td><td  valign='top'>2
+</td><td  valign='top'>7002.98
+</td><td  valign='top'>2801.19
+</td><td  valign='top'>576.72
+</td><td  valign='top'>370.75
+</td></tr><tr><td  valign='top'>2
+</td><td  valign='top'>1
+</td><td  valign='top'>8403.58
+</td><td  valign='top'>3377.91
+</td><td  valign='top'>780.30
+</td><td  valign='top'>432.54
+</td></tr><tr><td  valign='top'>2
+</td><td  valign='top'>0
+</td><td  valign='top'>10463.30
+</td><td  valign='top'>4201.79
+</td><td  valign='top'>865.88
+</td><td  valign='top'>556.12
+</td></tr><tr><td  valign='top'>1
+</td><td  valign='top'>3
+</td><td  valign='top'>12078.66
+</td><td  valign='top'>4943.20
+</td><td  valign='top'>988.66
+</td><td  valign='top'>659.11
+</td></tr><tr><td  valign='top'>1
+</td><td  valign='top'>2
+</td><td  valign='top'>14606.80
+</td><td  valign='top'>5602.39
+</td><td  valign='top'>1153.43
+</td><td  valign='top'>741.49
+</td></tr><tr><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>16807.20
+</td><td  valign='top'>6755.82
+</td><td  valign='top'>1400.60
+</td><td  valign='top'>865.80
+</td></tr><tr><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>20926.60
+</td><td  valign='top'>8403.58
+</td><td  valign='top'>1730.15
+</td><td  valign='top'>1112.24
+</td></tr></table>
+<p class='vspace'><span  style='background-color: #eee; display: inline;'>Likely transcription errors here, especially lower in the table</span>
+</p>
+<p class='vspace'>Note: When RATE is &lsquo;0&prime;, the envelope will not change.
+</p>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page14' id='page14'></a> <a style='color: white' href='YM2413ApplicationManual#page14'>Page 14</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-14.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='iii16' id='iii16'></a>
+</p><h4>(III-1-6) BLOCK/F-Number/SUS/KEY: Address [$A0~$B8]</h4>
+<p>Data defining a musical scale and interval. The F-Number is contained in the registers $1* and $2*.
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td  valign='top'>
+</td><td  valign='top'>D<sub>7</sub>
+</td><td  valign='top'>D<sub>6</sub>
+</td><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>D<sub>3</sub>
+</td><td  valign='top'>D<sub>2</sub>
+</td><td  valign='top'>D<sub>1</sub>
+</td><td  valign='top'>D<sub>0</sub>
+</td></tr><tr><td rowspan='2'  valign='top'>$10~$18
+</td><td colspan='8'  valign='top'><a href='YM2413ApplicationManual#iii16fnum'>F-Number</a>
+</td></tr><tr><td  valign='top'>2<sup>7</sup>
+</td><td  valign='top'>2<sup>6</sup>
+</td><td  valign='top'>2<sup>5</sup>
+</td><td  valign='top'>2<sup>4</sup>
+</td><td  valign='top'>2<sup>3</sup>
+</td><td  valign='top'>2<sup>2</sup>
+</td><td  valign='top'>2<sup>1</sup>
+</td><td  valign='top'>2<sup>0</sup>
+</td></tr><tr><td rowspan='2'  valign='top'>$20~$28
+</td><td rowspan='2' colspan='2'  valign='top'>
+</td><td rowspan='2'  valign='top'><a href='YM2413ApplicationManual#iii16sus'>SUS</a>
+</td><td rowspan='2'  valign='top'><a href='YM2413ApplicationManual#iii16key'>KEY</a>
+</td><td colspan='3'  valign='top'><a href='YM2413ApplicationManual#iii16block'>BLOCK</a>
+</td><td  valign='top'><a href='YM2413ApplicationManual#iii16fnum'>F-Num</a>
+</td></tr><tr><td  valign='top'>2<sup>2</sup>
+</td><td  valign='top'>2<sup>1</sup>
+</td><td  valign='top'>2<sup>0</sup>
+</td><td  valign='top'>2<sup>8</sup>
+</td></tr></table>
+<p class='vspace'><a name='iii16fnum' id='iii16fnum'></a>
+</p><ul><li>D<sub>0</sub>~D<sub>7</sub> [$1*], D<sub>0</sub> [$2*] (F-Number): The F-Number is defined with 8 bits of the $1* register and LSB of $2*, for a total of 9 bits. This F-Number defines a scale (how a value is assigned to the F-number is <a href='YM2413ApplicationManual#iii16fnumblock'>described later</a>).
+</li></ul><p><a name='iii16block' id='iii16block'></a>
+</p><ul><li>D<sub>1</sub>~D<sub>3</sub> (BLOCK): Defines octave information.
+</li></ul><p><a name='iii16key' id='iii16key'></a>
+</p><ul><li>D<sub>4</sub> (KEY): This bit indicates the ON/OFF state of the key. When this bit is &lsquo;1&prime;, the associated channel is on and sound is produced. &lsquo;0&prime; is equivalent to Key-OFF.
+</li></ul><p><a name='iii16sus' id='iii16sus'></a>
+</p><ul><li>D<sub>5</sub> (SUS): When this bit is &lsquo;1&prime;, the RR with the key off will be 5.
+</li></ul><p class='vspace'><a name='iii16fnumblock' id='iii16fnumblock'></a>
+F-Number/Block
+</p>
+<p class='vspace'>The OPLL generates the necessary frequency when an appropriate increment of phase is given. The increment is determined by the F-Number, Block, and Multiple information. The following formula gives the increment for a desired frequency.
+</p>
+<p class='vspace'><span class='rfloat'>(1)</span>
+ΔP = f<sub>mus</sub> × 2<sup>18</sup> / f<sub>sam</sub>
+</p>
+<div class='vspace'></div><ul><li>f<sub>sam</sub> = f<sub>M</sub>/72
+</li><li>f<sub>mus</sub>: Desired frequency
+</li><li>f<sub>sam</sub>: Sampling frequency (50 kHz)
+</li><li>f<sub>M</sub>: Input clock frequency (3.6 MHz)
+</li></ul><p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page15' id='page15'></a> <a style='color: white' href='YM2413ApplicationManual#page15'>Page 15</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-15.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'>Because the increment value specification occupies many bits, we can give the increment within an octave and shift the value to double, 4 times, etc. for a specific octave. Then the instrument is expressed as follows.
+</p>
+<p class='vspace'><span class='rfloat'>(2)</span>
+ΔP = 2<sup>B</sup> × F&rsquo; × MUL
+</p>
+<div class='vspace'></div><ul><li>B: Octave information
+</li><li>F&rsquo;: Increment within an octave
+</li><li>MUL: Multiple data
+</li></ul><p class='vspace'>From equation (1) and (2) the increment (F&rsquo;) is expressed with 1 bit. F-Number and Block are expressed as follows.
+</p>
+<p class='vspace'>F = (f<sub>mus</sub> × 2<sup>18</sup>/f<sub>sam</sub>) / 2<sup>b-1</sup>       @ MUL = 1
+</p>
+<div class='vspace'></div><ul><li>F: F-Number data
+</li><li>b: Block data
+</li></ul><p class='vspace'><a name='tableiii81' id='tableiii81'></a>
+Table III-8-1 F-Number (1)
+</p>
+<table border='1' ><tr><td rowspan='2'  valign='top'>Sound steps
+</td><td rowspan='2'  valign='top'>Frequency (4 oct)
+</td><td rowspan='2'  valign='top'>F-Number
+</td><td  valign='top'>$2*
+</td><td colspan='8'  valign='top'>$1*
+</td></tr><tr><td  valign='top'>D<sub>0</sub>
+</td><td  valign='top'>D<sub>7</sub>
+</td><td  valign='top'>D<sub>6</sub>
+</td><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>D<sub>3</sub>
+</td><td  valign='top'>D<sub>2</sub>
+</td><td  valign='top'>D<sub>1</sub>
+</td><td  valign='top'>D<sub>0</sub>
+</td></tr><tr><td  valign='top'>C#
+</td><td  valign='top'>277.2
+</td><td  valign='top'>181
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td></tr><tr><td  valign='top'>D
+</td><td  valign='top'>293.7
+</td><td  valign='top'>192
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td></tr><tr><td  valign='top'>D#
+</td><td  valign='top'>311.1
+</td><td  valign='top'>204
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td></tr><tr><td  valign='top'>E
+</td><td  valign='top'>329.6
+</td><td  valign='top'>216
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td></tr><tr><td  valign='top'>F
+</td><td  valign='top'>349.2
+</td><td  valign='top'>229
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td></tr><tr><td  valign='top'>F#
+</td><td  valign='top'>370.0
+</td><td  valign='top'>242
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td></tr><tr><td  valign='top'>G
+</td><td  valign='top'>392.0
+</td><td  valign='top'>257
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td></tr><tr><td  valign='top'>G#
+</td><td  valign='top'>415.3
+</td><td  valign='top'>272
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td></tr><tr><td  valign='top'>A
+</td><td  valign='top'>440.0
+</td><td  valign='top'>288
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td></tr><tr><td  valign='top'>A#
+</td><td  valign='top'>466.2
+</td><td  valign='top'>305
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td></tr><tr><td  valign='top'>B
+</td><td  valign='top'>193.9
+</td><td  valign='top'>323
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td></tr><tr><td  valign='top'>C
+</td><td  valign='top'>523.3
+</td><td  valign='top'>343
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td></tr></table>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page16' id='page16'></a> <a style='color: white' href='YM2413ApplicationManual#page16'>Page 16</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-16.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='tableiii82' id='tableiii82'></a>
+Table III-8-2 F-Number (2)
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td rowspan='2'  valign='top'>Sound steps
+</td><td rowspan='2'  valign='top'>Frequency (4 oct)
+</td><td rowspan='2'  valign='top'>F-Number
+</td><td  valign='top'>$2*
+</td><td colspan='8'  valign='top'>$1*
+</td></tr><tr><td  valign='top'>D<sub>0</sub>
+</td><td  valign='top'>D<sub>7</sub>
+</td><td  valign='top'>D<sub>6</sub>
+</td><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>D<sub>3</sub>
+</td><td  valign='top'>D<sub>2</sub>
+</td><td  valign='top'>D<sub>1</sub>
+</td><td  valign='top'>D<sub>0</sub>
+</td></tr><tr><td  valign='top'>G
+</td><td  valign='top'>392.2
+</td><td  valign='top'>257
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td></tr><tr><td  valign='top'>G#
+</td><td  valign='top'>415.3
+</td><td  valign='top'>272
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td></tr><tr><td  valign='top'>A
+</td><td  valign='top'>440.0
+</td><td  valign='top'>288
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td></tr><tr><td  valign='top'>A#
+</td><td  valign='top'>466.2
+</td><td  valign='top'>305
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td></tr><tr><td  valign='top'>B
+</td><td  valign='top'>493.9
+</td><td  valign='top'>323
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td></tr><tr><td  valign='top'>C
+</td><td  valign='top'>523.3
+</td><td  valign='top'>343
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td></tr><tr><td  valign='top'>C#
+</td><td  valign='top'>554.4
+</td><td  valign='top'>363
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td></tr><tr><td  valign='top'>D
+</td><td  valign='top'>587.3
+</td><td  valign='top'>385
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td></tr><tr><td  valign='top'>D#
+</td><td  valign='top'>622.2
+</td><td  valign='top'>408
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td></tr><tr><td  valign='top'>E
+</td><td  valign='top'>659.3
+</td><td  valign='top'>432
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td></tr><tr><td  valign='top'>F
+</td><td  valign='top'>698.5
+</td><td  valign='top'>458
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td></tr><tr><td  valign='top'>F#
+</td><td  valign='top'>740.0
+</td><td  valign='top'>485
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td><td  valign='top'>0
+</td><td  valign='top'>1
+</td></tr></table>
+<p class='vspace'><a name='iii17' id='iii17'></a>
+</p><h4>(III-1-7) RHYTHM: Address [$0E]</h4>
+<p>To control ON/OFF of the Rhythm mode selection and percussion instruments.
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>D<sub>3</sub>
+</td><td  valign='top'>D<sub>2</sub>
+</td><td  valign='top'>D<sub>1</sub>
+</td><td  valign='top'>D<sub>0</sub>
+</td></tr><tr><td  valign='top'>RHYTHM
+</td><td  valign='top'>BD
+</td><td  valign='top'>SD
+</td><td  valign='top'>TOM
+</td><td  valign='top'>TOP-CY
+</td><td  valign='top'>HH
+</td></tr></table>
+<p class='vspace'>D<sub>0</sub>~D<sub>5</sub> (RHYTHM): When D<sub>5</sub> = 1, OPLL is in Rhythm mode with percussion sounds produced through channels 7~9 (see <a href='YM2413ApplicationManual#page5'>page 5</a>). In this mode, the melody section is limited to six sounds. D<sub>0</sub>~D<sub>4</sub> controls ON/OFF of percussion instruments. Therefore Key-ON bits $26, $27, $28 must always be cleared to 0. Slots 13~18 are related with percussion sounds as shown in <a href='YM2413ApplicationManual#tableiii9'>Table III-9</a>, and data of F-Num must input values that match percussion sounds.
+</p>
+<p class='vspace'><a name='tableiii9' id='tableiii9'></a>
+Table III-9 Rhythm slots
+</p>
+<table border='1' ><tr><td  valign='top'>Instrument
+</td><td  valign='top'>Slot
+</td></tr><tr><td  valign='top'>BD
+</td><td  valign='top'>13, 16
+</td></tr><tr><td  valign='top'>SD
+</td><td  valign='top'>17
+</td></tr><tr><td  valign='top'>TOM
+</td><td  valign='top'>15
+</td></tr><tr><td  valign='top'>TOP-CYM
+</td><td  valign='top'>18
+</td></tr><tr><td  valign='top'>HH
+</td><td  valign='top'>14
+</td></tr></table>
+<div class='vspace'></div>
+<table border='1' ><tr><td  valign='top'>Address
+</td><td  valign='top'>Data
+</td></tr><tr><td  valign='top'>16
+</td><td  valign='top'>20
+</td></tr><tr><td  valign='top'>17
+</td><td  valign='top'>50
+</td></tr><tr><td  valign='top'>18
+</td><td  valign='top'>C0
+</td></tr><tr><td  valign='top'>26
+</td><td  valign='top'>05
+</td></tr><tr><td  valign='top'>27
+</td><td  valign='top'>05
+</td></tr><tr><td  valign='top'>28
+</td><td  valign='top'>01
+</td></tr></table>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page17' id='page17'></a> <a style='color: white' href='YM2413ApplicationManual#page17'>Page 17</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-17.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='iii18' id='iii18'></a>
+</p><h4>(III-1-8) INST/VOL: Address [$30~$38]</h4>
+<p>Determine the voice (15 voices preset in ROM and original voices) and the volume.
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td  valign='top'>
+</td><td  valign='top'>D<sub>7</sub>
+</td><td  valign='top'>D<sub>6</sub>
+</td><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>D<sub>3</sub>
+</td><td  valign='top'>D<sub>2</sub>
+</td><td  valign='top'>D<sub>1</sub>
+</td><td  valign='top'>D<sub>0</sub>
+</td></tr><tr><td  valign='top'>$30~$38
+</td><td colspan='4'  valign='top'><a href='YM2413ApplicationManual#iii18inst'>INST</a>
+</td><td colspan='4'  valign='top'><a href='YM2413ApplicationManual#iii18vol'>VOL</a>
+</td></tr></table>
+<p class='vspace'><a name='iii18inst' id='iii18inst'></a>
+</p><ul><li>D<sub>4</sub>~D<sub>7</sub> (INST): These four bits determine voices as follows:
+</li></ul><div class='vspace'></div>
+<table border='1' ><tr><td  valign='top'>INST
+</td><td  valign='top'>Instrument
+</td></tr><tr><td  valign='top'>0
+</td><td  valign='top'>Original
+</td></tr><tr><td  valign='top'>1
+</td><td  valign='top'>Violin
+</td></tr><tr><td  valign='top'>2
+</td><td  valign='top'>Guitar
+</td></tr><tr><td  valign='top'>3
+</td><td  valign='top'>Piano
+</td></tr><tr><td  valign='top'>4
+</td><td  valign='top'>Flute
+</td></tr><tr><td  valign='top'>5
+</td><td  valign='top'>Clarinet
+</td></tr><tr><td  valign='top'>6
+</td><td  valign='top'>Oboe
+</td></tr><tr><td  valign='top'>7
+</td><td  valign='top'>Trumpet
+</td></tr><tr><td  valign='top'>8
+</td><td  valign='top'>Organ
+</td></tr><tr><td  valign='top'>9
+</td><td  valign='top'>Horn
+</td></tr><tr><td  valign='top'>A
+</td><td  valign='top'>Synthesizer
+</td></tr><tr><td  valign='top'>B
+</td><td  valign='top'>Harpsichord
+</td></tr><tr><td  valign='top'>C
+</td><td  valign='top'>Vibraphone
+</td></tr><tr><td  valign='top'>D
+</td><td  valign='top'>Synthesizer Bass
+</td></tr><tr><td  valign='top'>E
+</td><td  valign='top'>Acoustic Bass
+</td></tr><tr><td  valign='top'>F
+</td><td  valign='top'>Electric Guitar
+</td></tr></table>
+<p class='vspace'><a name='iii18vol' id='iii18vol'></a>
+</p><ul><li>D<sub>0</sub>~D<sub>3</sub> (VOL): Determine the volume for the voices. The minimum resolution is 3 dB and the maximum 45 dB.
+</li></ul><div class='vspace'></div>
+<table border='1' ><tr><td  valign='top'>D<sub>3</sub>
+</td><td  valign='top'>D<sub>2</sub>
+</td><td  valign='top'>D<sub>1</sub>
+</td><td  valign='top'>D<sub>0</sub>
+</td></tr><tr><td  valign='top'>24 dB
+</td><td  valign='top'>12 dB
+</td><td  valign='top'>6 dB
+</td><td  valign='top'>3 dB
+</td></tr></table>
+<p class='vspace'>In the rhythm mode (addr = $0E, D<sub>5</sub> = &lsquo;H&rsquo;), each rhythm volume for $36~$38 are set as follows:
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td  valign='top'>Addr
+</td><td  valign='top'>D<sub>7</sub>
+</td><td  valign='top'>D<sub>6</sub>
+</td><td  valign='top'>D<sub>5</sub>
+</td><td  valign='top'>D<sub>4</sub>
+</td><td  valign='top'>D<sub>3</sub>
+</td><td  valign='top'>D<sub>2</sub>
+</td><td  valign='top'>D<sub>1</sub>
+</td><td  valign='top'>D<sub>0</sub>
+</td></tr><tr><td  valign='top'>$36
+</td><td colspan='4'  valign='top'>
+</td><td colspan='4'  valign='top'>BD
+</td></tr><tr><td  valign='top'>$37
+</td><td colspan='4'  valign='top'>HH
+</td><td colspan='4'  valign='top'>SD
+</td></tr><tr><td  valign='top'>$38
+</td><td colspan='4'  valign='top'>TOM
+</td><td colspan='4'  valign='top'>T-CYM
+</td></tr></table>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page18' id='page18'></a> <a style='color: white' href='YM2413ApplicationManual#page18'>Page 18</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-18.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='iii2' id='iii2'></a>
+</p><h3>(III-2) Phase Generator (PG)</h3>
+<p>The phase generator produces a phase value by accumulating increments that correspond to the frequency required at a given unit of time. The increment is generated from frequency data (F-Number, Block, and Multiple) sent from the registers. The frequency data is combined with the output of a built-in vibrato oscillator to produce a vibrato effect.
+</p>
+<p class='vspace'><a name='iii3' id='iii3'></a>
+</p><h3>(III-3) Envelope Generator (EG)</h3>
+<p>The envelope generator (EG) varies tone and sound level with time under the control of Attack Rate, Decay Rate, Release Rate, Sustain Level and Total Level. Its dynamic range is 48 dB (resolution: 0.325 dB). EG uses a logarithmic scale and is represented with an attenuation level. The general waveform is shown in <a href='YM2413ApplicationManual#figiii2'>Figure III-2</a>. Distinctively the waveform rises exponentially during attack time and varies linearly everywhere else. Attack stops and decay begins at 0 dB. Decay changes to sustain as soon as the sustain level is reached. Sustain will change to release when the key is released. The envelope waveform varies when parameters representing the effects of the total level, level key scale, and amplitude modulation, etc, are applied to EG.
+</p>
+<p class='vspace'><a name='figiii2' id='figiii2'></a>
+</p><div><img src='../uploads/Documents/figureiii2.png' alt='' title='' /></div>
+<p class='vspace'>Figure III-2 Envelope waveform
+</p>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page19' id='page19'></a> <a style='color: white' href='YM2413ApplicationManual#page19'>Page 19</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-19.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='iii4' id='iii4'></a>
+</p><h3>(III-4) Operator (OP) and DAC</h3>
+<p>The operator performs FM calculations. Using the phase output from the phase generator, the operator calculates the value of SIN and multiplies it by the output of the envelope generator. Then if there are modulated waves, they are returned to the input of the operator and any sounds are sent to the DAC. This is controlled by the Feedback data.
+</p>
+<p class='vspace'>The DAC performs DA conversion for all the sounds then outputs them as shown in <a href='YM2413ApplicationManual#figiii3'>Figure III-3</a> (a). To sum up the sounds, an integrated circuit is added to MO/RO. (<a href='YM2413ApplicationManual#figiii3'>Figure III-3</a> (b)) Since the level of percussive sounds seems lower, when compared to musical sounds, the same percussive sounds are output twice. (<a href='YM2413ApplicationManual#figiii3'>Figure III-3</a> (c))
+</p>
+<p class='vspace'><a name='figiii3' id='figiii3'></a>
+</p><div><img src='../uploads/Documents/figureiii3.png' alt='' title='' /></div>
+<p class='vspace'>Figure III-3
+</p>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page20' id='page20'></a> <a style='color: white' href='YM2413ApplicationManual#page1'>Page 20</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-20.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='iv' id='iv'></a>
+</p><h2>IV. Interfacing</h2>
+<p>OPLL, controlled by a microprocessor or microcomputer, outputs an audio signal, being an analog signal converted with a D/A converter. To obtain sound from OPLL, it is necessary to interface it with other devices. This chapter describes interfacing.
+</p>
+<p class='vspace'><a name='figiv1' id='figiv1'></a>
+</p><div><img src='../uploads/Documents/figureiv1.png' alt='' title='' /></div>
+<p class='vspace'>Figure IV-1 System block diagram
+</p>
+<p class='vspace'><a name='iv1' id='iv1'></a>
+</p><h3>(IV-1) Clock Generation</h3>
+<p>OPLL operates in the range of 2 to 4 MHz. Amplitude modulation, the frequency of the vibrato oscillator, and attack decay speeds are designed to take 3.6 MHz (3.579545 MHz) as the reference frequency. Therefore, when this LSI is used, it will be economical to connect the quartz crystal oscillator (for color burst signals) with Xin Xout.
+</p>
+<p class='vspace'><a name='iv2' id='iv2'></a>
+</p><h3>(IV-2) Audio Output Interface</h3>
+<p>An external integrated circuit is needed for the OPLL&rsquo;s music sound output, which is a pulse signal as described earlier. The output (and buffer) of this integrated circuit may be directly connected to an audio amplifier. For better sound quality, you can remove step noises by inserting a low-pass filter (cutoff frequency: 20kHz or so) between the integrated circuit and amplifier. Click noises accompanying power-ON/OFF will be necessary to protect the audion equipment (amplifier and speakers).
+</p>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page21' id='page21'></a> <a style='color: white' href='YM2413ApplicationManual#page21'>Page 21</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-21.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='figiv2' id='figiv2'></a>
+</p><div><img src='../uploads/Documents/figureiv2.png' alt='' title='' /></div>
+<p class='vspace'>Figure IV-2 Audio interface
+</p>
+<p class='vspace'><a name='iv3' id='iv3'></a>
+</p><h3>(IV-3) Interfacing microprocessor/microcomputer</h3>
+<p>D<sub>0</sub>~D<sub>7</sub> of OPLL are the bidirectional bus lines which connect to a processor. OPLL exchanges address and data with the processor. The bus control signals <span class='bar'>CS</span>, <span class='bar'>WE</span> and A<sub>0</sub> control transfer of data. It is possible to build up an FM sound source system with the minimum configuration of OPLL, memory and processor.
+</p>
+<p class='vspace'><a name='figiv3' id='figiv3'></a>
+</p><div><img src='../uploads/Documents/figureiv3.png' alt='' title='' /></div>
+<p class='vspace'>Figure IV-3 Interfacing processor
+</p>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page22' id='page22'></a> <a style='color: white' href='YM2413ApplicationManual#page22'>Page 22</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-22.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='v' id='v'></a>
+</p><h2>V. Synthesis of music sounds</h2>
+<p>This chapter describes what data to enter the OPLL registers in order to synthesize sound of the piano and brass.
+</p>
+<p class='vspace'><a name='v1' id='v1'></a>
+</p><h3>(V-1) Procedure of Synthesizing Sounds</h3>
+<p>First, you have to analyze the sounds of the musical instrument which you want to synthesize by the FM method. For 
+</p>
+<p class='vspace'>example, the sound of a piano is characterized by a fast attack and, if the key is held down, a gradual delay. The will sound <span  style='background-color: #eee; display: inline;'>(sound will)</span> include many overtones at the attack time however, as time elapses, overtones disappear, resulting in a different overtone composition. When you are aware <span  style='background-color: #eee; display: inline;'>(of)</span> such characteristics, you are better able to synthesize the sounds by the FM method. The output amplitude can be determined from the characteristics of the envelope form and the modulation index from the overtone composition. Frequency ratio can also be determined roughly from the overtone composition because the frequency of the operator is related to it. In this way, you can determine the FM parameters roughly from characteristics of the sounds and, by listening to the synthesized sound, make minor corrections to obtain a more desirable result.
+</p>
+<p class='vspace'><a name='v2' id='v2'></a>
+</p><h3>(V-2) Fundamentals of Sound Synthesis</h3>
+<p>The FM sound source makes use of carrier wave modulation by the modulator.
+</p>
+<p class='vspace'>Since the FM&rsquo;s basic parameter (carrier output level, modulator output level, modulator feedback level, carrier frequency, modulator frequency) is handled effectively, the pitch, tone and volume of sounds can all be decided. <a href='YM2413ApplicationManual#tablev1'>Table V-1</a> shows the relationship between FM parameters and OPLL parameters.
+</p>
+<p class='vspace'><a name='v3' id='v3'></a>
+</p><h3>(V-3) Examples of Sound Synthesis</h3>
+<p><a name='tablev1' id='tablev1'></a>
+Table V-1 Fundamentals of sound synthesis
+</p>
+<table border='1' ><tr><td  valign='top'>Item
+</td><td  valign='top'>Related parameters
+</td><td  valign='top'>MIN &lt;- (Change of sounds) -&gt; MAX
+</td></tr><tr><td  valign='top'>Output level of carrier
+</td><td rowspan='2'  valign='top'>TOTAL LEVEL (Data of A, D, S, R and key scale data)
+</td><td  valign='top'>Low volume &lt;-&gt; High volume
+</td></tr><tr><td  valign='top'>Output level of modulator
+</td><td  valign='top'>Dull sound &lt;-&gt; Bright sound
+</td></tr><tr><td  valign='top'>Feedback level of modulator
+</td><td  valign='top'>FB
+</td><td  valign='top'>Ordinary tone &lt;-&gt; Sharp tone (Noise)
+</td></tr><tr><td  valign='top'>Carrier frequency
+</td><td rowspan='2'  valign='top'>MULTI (BLOCK/F-Number)
+</td><td  valign='top'>Low pitch &lt;-&gt; High pitch
+</td></tr><tr><td  valign='top'>Frequency of modulator
+</td><td  valign='top'>Near overtone &lt;-&gt; Far overtone
+</td></tr></table>
+<div class='vspace'></div><ol  style='list-style: lower-roman;'><li> Electric piano
+<ul><li>Determination of operator frequencies<br />Set MUL to &lsquo;1&prime;, for both operators, to produce an overtone of higher frequency. (Increases are integer multiples)
+</li></ul></li></ol><p  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page23' id='page23'></a> <a style='color: white' href='YM2413ApplicationManual#page23'>Page 23</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-23.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p><dl><dd><ul><li>Output level of the operator<br />Change the output of the modulator to adjust the tone. When determining the level of operator 1, adjust the sounds for rich overtones like those of the piano. Then make adjustment for sounds of higher frequencies by level scaling of operator 1. Level scaling is necessary so that the waveforms are nearly sine waves in high frequency ranges.
+</li><li>Setting EG<br />Determine sound volume, tone, and envelope. Set operator 2 so that the sounds have a sharp attack and long sustain. (This can be set varying degrees.) Let operator 1, the modulator, produce many overtones at the attack time and later keep a certain composition of overtones unchanged. To adjust sound volume, apply key scaling to operator 2. Perform RATE scaling to make sounds of higher pitches sharp.
+</li><li>Readjustment of data<br />Now sound synthesis is almost completed. Tones will vary somewhat depending on the setting of EG. Make a final adjustment with the output level and feedback level of the operators. If the sound is too metallic, for example, resuce the level of operator 1.
+</li><li>Adding effect<br />Finally, add tremolo effect by LFO to simulate the sounds of the electric piano. This is possible by using the built-in amplitude modulation function or by refreshing the value of TOTAL LEVEL in intervals of 2~6Hz (possibly with triangular waves) by software.
+</li></ul></dd></dl><ol  style='list-style: lower-roman;'><li value='2' >  Trumpet
+<ul><li>Output of operator<br />Adjust the total level of operator 1, the modulator, at $10~$28 and the feedback level to the maximum of &lsquo;7&prime; for bright tones.
+</li><li>Operator frequencies<br />Set both operators at &lsquo;1&prime;.
+</li><li>EG<br />Adjust two EGs for a slow attack. For brass sounds, ensure the modulator attack is slower than the carrier&rsquo;s. This is necessary to express the characteristic attack of brass sounds.
+</li><li>Key scaling<br />High-pitched sounds are not crisp because the envelope is set for a slow rise. Apply rate scaling for a more natural feeling of fast passages.
+</li></ul></li></ol><p  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page24' id='page24'></a> <a style='color: white' href='YM2413ApplicationManual#page24'>Page 24</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-24.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p><dl><dd><ul><li>LFO<br />With a brass instrument, the pitch of long notes fluctuates a little even when a good player is playing. To express this, apply vibrato effect.
+</li></ul></dd></dl><p class='vspace'><a name='v4' id='v4'></a>
+</p><h3>(V-4) Procedure of Percussion Sound Synthesis</h3>
+<p>Channels 7, 8 and 9 are used to synthesize percussion sounds. Five kinds of percussion sounds are generated by using these three channels and six slots. For the bass drum (BD), two slots are used to synthesize FM sounds. Therefore, bass drum sounds can be produced basically by the same procedure from (a) to (c). The other four kinds of percussion sounds (high hat, top cymbal, tom-tom, and snare drum) are described as follows.
+</p>
+<p class='vspace'>OPLL includes a noise oscillator obtained by composing a white noise generator with several frequencies. This noise oscillator is specified by the frequency information (BLOCK, F-Number, Multiple) of the 8 and 9 channels. When composed with white noise, phase output suitable for percussion instruments is generated and given to the operator. Thus phases of four instruments are generated from two sets of frequency information. It is known empirically that the optimum ratio of two frequencies is 3:1 (f<sub>7CH</sub> = 3×f<sub>8CH</sub>). Now phase data of individual instruments are obtained. Next, we multiply this output with envelope information. Since the envelope is set as 1 slot -&gt; 1 percussion instrument, values that reflect the characteristics of individual percussion instruments, as with melody instruments, are set in ROM. (Refer to <a href='YM2413ApplicationManual#iii17'>III-1-7</a>)
+</p>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page25' id='page25'></a> <a style='color: white' href='YM2413ApplicationManual#page25'>Page 25</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-25.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'><a name='vi' id='vi'></a>
+</p><h2>VI. ELECTRICAL CHARACTERISTICS</h2>
+<p>1. Absolute Maximum Ratings
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td  valign='top'>ITEM
+</td><td  valign='top'>RATING
+</td><td  valign='top'>UNIT
+</td></tr><tr><td  valign='top'>Pin voltage
+</td><td  valign='top'>0.3~7.0
+</td><td  valign='top'>V
+</td></tr><tr><td  valign='top'>Ambient operating temperature
+</td><td  valign='top'>0~70
+</td><td  valign='top'>°C
+</td></tr><tr><td  valign='top'>Storage temperature
+</td><td  valign='top'>-50~125
+</td><td  valign='top'>°C
+</td></tr></table>
+<p class='vspace'>2. Recommended Operating Conditions
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td  valign='top'>ITEM
+</td><td  valign='top'>SYMBOL
+</td><td  valign='top'>MIN.
+</td><td  valign='top'>TYP.
+</td><td  valign='top'>MAX.
+</td><td  valign='top'>UNIT
+</td></tr><tr><td rowspan='2'  valign='top'>Supply voltage
+</td><td  valign='top'>V<sub>CC</sub>
+</td><td  valign='top'>4.75
+</td><td  valign='top'>5
+</td><td  valign='top'>5.25
+</td><td  valign='top'>V
+</td></tr><tr><td  valign='top'>GND
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>0
+</td><td  valign='top'>V
+</td></tr></table>
+<p class='vspace'>3. DC Characteristics
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td colspan='2'  valign='top'>ITEM
+</td><td  valign='top'>SYMBOL
+</td><td  valign='top'>CONDITION
+</td><td  valign='top'>MIN.
+</td><td  valign='top'>TYP.
+</td><td  valign='top'>MAX.
+</td><td  valign='top'>UNIT
+</td></tr><tr><td  valign='top'>High level input voltage
+</td><td  valign='top'>All input
+</td><td  valign='top'>V<sub>IH</sub>
+</td><td  valign='top'>
+</td><td  valign='top'>2.0
+</td><td  valign='top'>
+</td><td  valign='top'>V<sub>CC</sub>
+</td><td  valign='top'>V
+</td></tr><tr><td  valign='top'>Low level input voltage
+</td><td  valign='top'>All input
+</td><td  valign='top'>V<sub>IL</sub>
+</td><td  valign='top'>
+</td><td  valign='top'>-0.3
+</td><td  valign='top'>
+</td><td  valign='top'>0.8
+</td><td  valign='top'>V
+</td></tr><tr><td  valign='top'>Leak input current
+</td><td  valign='top'>A<sub>0</sub>, <span class='bar'>WE</span>
+</td><td  valign='top'>I<sub>L</sub>
+</td><td  valign='top'>V<sub>in</sub> = 0~5 V
+</td><td  valign='top'>-10
+</td><td  valign='top'>
+</td><td  valign='top'>10
+</td><td  valign='top'>µA
+</td></tr><tr><td  valign='top'>Three-state (off) input current
+</td><td  valign='top'>D<sub>0</sub>~D<sub>7</sub>
+</td><td  valign='top'>I<sub>TSL</sub>
+</td><td  valign='top'>V<sub>in</sub> = 0~5 V
+</td><td  valign='top'>-10
+</td><td  valign='top'>
+</td><td  valign='top'>10
+</td><td  valign='top'>µA
+</td></tr><tr><td rowspan='2'  valign='top'>Analog output voltage
+</td><td  valign='top'>MO
+</td><td  valign='top'>V<sub>MOA</sub>
+</td><td  valign='top'>R<sub>LOAD</sub> = 2.2K
+</td><td  valign='top'>
+</td><td  valign='top'>1.6
+</td><td  valign='top'>
+</td><td  valign='top'>V<sub>PP</sub>
+</td></tr><tr><td  valign='top'>RO
+</td><td  valign='top'>V<sub>ROA</sub>
+</td><td  valign='top'>R<sub>LOAD</sub> = 2.2K
+</td><td  valign='top'>
+</td><td  valign='top'>1.6
+</td><td  valign='top'>
+</td><td  valign='top'>V<sub>PP</sub>
+</td></tr><tr><td  valign='top'>Pullup resistance
+</td><td  valign='top'><span class='bar'>IC</span>, <span class='bar'>CS</span>
+</td><td  valign='top'>R<sub>PU</sub>
+</td><td  valign='top'>
+</td><td  valign='top'>100
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>KΩ
+</td></tr><tr><td  valign='top'>Input capacity
+</td><td  valign='top'>All input
+</td><td  valign='top'>C<sub>I</sub>
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>10
+</td><td  valign='top'>pF
+</td></tr><tr><td  valign='top'>Output capacity
+</td><td  valign='top'>All input
+</td><td  valign='top'>C<sub>O</sub>
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>10
+</td><td  valign='top'>PF
+</td></tr><tr><td  valign='top'>Power current
+</td><td  valign='top'>
+</td><td  valign='top'>I<sub>CC</sub>
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>40
+</td><td  valign='top'>80
+</td><td  valign='top'>MA
+</td></tr></table>
+<p class='vspace'>4. AC Characteristics
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td colspan='2'  valign='top'>ITEM
+</td><td  valign='top'>SYMBOL
+</td><td  valign='top'>CONDITION
+</td><td  valign='top'>MIN.
+</td><td  valign='top'>TYP.
+</td><td  valign='top'>MAX.
+</td><td  valign='top'>UNIT
+</td></tr><tr><td  valign='top'>Address setup time
+</td><td  valign='top'>A<sub>0</sub>
+</td><td  valign='top'>T<sub>AS</sub>
+</td><td  valign='top'>Fig. A-1
+</td><td  valign='top'>10
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>ns
+</td></tr><tr><td  valign='top'>Address hold time
+</td><td  valign='top'>A<sub>0</sub>
+</td><td  valign='top'>T<sub>AH</sub>
+</td><td  valign='top'>Fig. A-1
+</td><td  valign='top'>10
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>ns
+</td></tr><tr><td  valign='top'>Chip select write width
+</td><td  valign='top'><span class='bar'>CS</span>
+</td><td  valign='top'>T<sub>CSW</sub>
+</td><td  valign='top'>Fig. A-1
+</td><td  valign='top'>80
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>ns
+</td></tr><tr><td  valign='top'>Write pulse write width
+</td><td  valign='top'><span class='bar'>WE</span>
+</td><td  valign='top'>T<sub>WW</sub>
+</td><td  valign='top'>Fig. A-1
+</td><td  valign='top'>110
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>ns
+</td></tr><tr><td  valign='top'>Write pulse setup time
+</td><td  valign='top'><span class='bar'>WE</span>
+</td><td  valign='top'>T<sub>WS</sub>
+</td><td  valign='top'>Fig. A-1
+</td><td  valign='top'>30
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>ns
+</td></tr><tr><td  valign='top'>Write data setup time
+</td><td  valign='top'>D<sub>0</sub>~D<sub>7</sub>
+</td><td  valign='top'>T<sub>WDS</sub>
+</td><td  valign='top'>Fig. A-1
+</td><td  valign='top'>10
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>ns
+</td></tr><tr><td  valign='top'>Write data hold time
+</td><td  valign='top'>D<sub>0</sub>~D<sub>7</sub>
+</td><td  valign='top'>T<sub>WDH</sub>
+</td><td  valign='top'>Fig. A-1
+</td><td  valign='top'>25
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>ns
+</td></tr><tr><td  valign='top'>Reset pulse width
+</td><td  valign='top'><span class='bar'>IC</span>
+</td><td  valign='top'>N<sub>ICW</sub>
+</td><td  valign='top'>Fig. A-2
+</td><td  valign='top'>
+</td><td  valign='top'>80
+</td><td  valign='top'>
+</td><td  valign='top'>Cycle
+</td></tr></table>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page26' id='page26'></a> <a style='color: white' href='YM2413ApplicationManual#page26'>Page 26</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-26.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'>5. DAC properties
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr><td colspan='2'  valign='top'>ITEM
+</td><td  valign='top'>SYMBOL
+</td><td  valign='top'>CONDITION
+</td><td  valign='top'>MIN.
+</td><td  valign='top'>TYP.
+</td><td  valign='top'>MAX.
+</td><td  valign='top'>UNIT
+</td></tr><tr><td  valign='top'>Maximum output oscillation
+</td><td  valign='top'>R<sub>O</sub>, M<sub>O</sub>
+</td><td  valign='top'>V<sub>out</sub>
+</td><td  valign='top'><a href='YM2413ApplicationManual#figiv2'>Fig. IV-2</a>
+</td><td  valign='top'>
+</td><td  valign='top'>2/5 V<sub>CC</sub>
+</td><td  valign='top'>
+</td><td  valign='top'>V<sub>PP</sub>
+</td></tr><tr><td  valign='top'>Resolution
+</td><td  valign='top'>R<sub>O</sub>, M<sub>O</sub>
+</td><td  valign='top'>
+</td><td  valign='top'><a href='YM2413ApplicationManual#figiv2'>Fig. IV-2</a>
+</td><td  valign='top'>
+</td><td  valign='top'>9
+</td><td  valign='top'>
+</td><td  valign='top'>Bit
+</td></tr><tr><td  valign='top'>Noise
+</td><td  valign='top'>R<sub>O</sub>, M<sub>O</sub>
+</td><td  valign='top'>
+</td><td  valign='top'><a href='YM2413ApplicationManual#figiv2'>Fig. IV-2</a>
+</td><td  valign='top'>
+</td><td  valign='top'>-65
+</td><td  valign='top'>
+</td><td  valign='top'>dB
+</td></tr></table>
+<p class='vspace'>Note: The noise level should be suitable for the volume level.
+</p>
+<p class='vspace'><a name='vii' id='vii'></a>
+</p><h2>VII. Timing diagrams</h2>
+<p>Standard timing settings are V<sub>DL</sub> = 2.0V, V<sub>IL</sub> = 0.8V.
+</p>
+<p class='vspace'><a name='figa1' id='figa1'></a>
+</p><div><img src='../uploads/Documents/figurea1.png' alt='' title='' /></div>
+<p class='vspace'>NOTE: T<sub>CSW</sub>, T<sub>WW</sub> and T<sub>WDH</sub> have been measured with either <span class='bar'>CS</span> or <span class='bar'>WE</span> high.
+</p>
+<p class='vspace'>Fig. A-1 Write Timing
+</p>
+<p class='vspace'><a name='figa2' id='figa2'></a>
+</p><div><img src='../uploads/Documents/figurea2.png' alt='' title='' /></div>
+<p class='vspace'>Fig. A-2 Reset Timing
+</p>
+<p class='vspace'  style='background-color: #666; color: white; border: 1px solid black; text-align: right;'> <a style='color: white' name='page27' id='page27'></a> <a style='color: white' href='YM2413ApplicationManual#page27'>Page 27</a> - <a style='color: white' class='urllink' href='http://www.smspower.org/maxim/uploads/Documents/2413-27.png' rel='nofollow'>original</a> - <a style='color: white' href='YM2413ApplicationManual#top'>top</a>
+</p>
+<p class='vspace'>
+</p><h2>VII. OUTLINE DIMENSIONS</h2>
+<div><img src='../uploads/Documents/outlinedimensions.png' alt='' title='' /></div>
+</div>
+
+			<div id='sidebar'><div class='fpltemplate'><h2><a class='wikilink' href='http://www.smspower.org/maxim/'>Blag</a></h2>
+<ul><li><a class='wikilink' href='http://www.smspower.org/maxim/XanderMingxuanZhao'>Xander Mingxuan Zhao</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/ImNotDead'>I’m Not Dead</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/WonderBoyInMonsterLandSphinxQuestions'>Wonder Boy In Monster Land Sphinx Questions</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/StatueInARestaurant'>Statue In A Restaurant</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/CatsInAFridge'>Cats In A Fridge</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Archive'>Older...</a> <a class='wikilink' href='http://www.smspower.org/maxim/RSS'><img src='../uploads/Site/rss.png' alt='RSS' title='RSS' /></a>
+</li></ul>
+</div>
+<div class='vspace'></div><div class='fpltemplate'><h2><a class='wikilink' href='http://www.smspower.org/maxim/Software/Index'>Software</a></h2>
+<ul><li><a class='wikilink' href='http://www.smspower.org/maxim/Software/BMP2Tile'>BMP2Tile</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Software/GBAVGMPlayer'>GBA VGM Player</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Software/HeaderReader'>Header Reader</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Software/MekaConfigurator'>Meka Configurator</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Software/ScreenshotAutostitcher'>Screenshot Autostitcher</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Software/SMSChecker'>SMS Checker</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Software/SMSOffsetConvertor'>SMS Offset Convertor</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Software/SMSReader'>SMS Reader</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Software/TileDecoder'>Tile Decoder</a>
+</li></ul>
+</div>
+<div class='vspace'></div><div class='fpltemplate'><h2><a class='wikilink' href='http://www.smspower.org/maxim/SMSSoftware/Index'>SMS Software</a></h2>
+<ul><li><a class='wikilink' href='http://www.smspower.org/maxim/SMSSoftware/BocksBirthday2002'>Bock&rsquo;s Birthday 2002</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/SMSSoftware/BocksBirthday2003'>Bock&rsquo;s Birthday 2003</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/SMSSoftware/BocksBirthday2004'>Bock&rsquo;s Birthday 2004</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/SMSSoftware/Chip8'>Chip 8</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/SMSSoftware/Compressors'>Compressors</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/SMSSoftware/NotOnlyWordsPrettyPhoto'>Not Only Words / Pretty Photo</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/SMSSoftware/Ono'>ono</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/SMSSoftware/Picross'>Picross</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/SMSSoftware/VGMPlayer'>VGM Player</a>
+</li></ul>
+</div>
+<div class='vspace'></div><div class='fpltemplate'><h2><a class='wikilink' href='http://www.smspower.org/maxim/HowToProgram/Index'>How To Program</a></h2>
+<ul><li><a class='wikilink' href='http://www.smspower.org/maxim/HowToProgram/Lesson1'>Lesson 1</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/HowToProgram/Lesson2'>Lesson 2</a>
+</li></ul>
+</div>
+<div class='vspace'></div><div class='fpltemplate'><h2><a class='wikilink' href='http://www.smspower.org/maxim/Maps/Index'>Maps</a></h2>
+<ul><li><a class='wikilink' href='http://www.smspower.org/maxim/Maps/CoolSpot'>Cool Spot</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Maps/ArcadeSmashHits'>Arcade Smash Hits</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Maps/SonicTheHedgehog'>Sonic the Hedgehog</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Maps/LuckyDimeCaper'>The Lucky Dime Caper</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Maps/FIFAInternationalSoccer'>FIFA International Soccer</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Maps/ChuckRockII'>Chuck Rock II</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Maps/ChuckRock'>Chuck Rock</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Maps/AztecAdventure'>Aztec Adventure</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Maps/WonderBoyIIITheDragonsTrap'>Wonder Boy III: The Dragon&rsquo;s Trap</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Maps/EnduroRacer'>Enduro Racer</a>
+</li></ul>
+</div>
+<ul><li><a class='wikilink' href='http://www.smspower.org/maxim/Maps/Index'>More...</a>
+</li></ul><div class='vspace'></div><div class='fpltemplate'><h2><a class='wikilink' href='http://www.smspower.org/maxim/Documents/Index'>Documents</a></h2>
+<ul><li><a class='wikilink' href='http://www.smspower.org/maxim/Documents/JapaneseSMSPCB'>Japanese SMS PCB</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Documents/MusicEngineAdvancedHacking'>Music Engine Advanced Hacking</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Documents/MusicEngineTriggerHacking'>Music Engine Trigger Hacking</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Documents/PauseHack'>Pause Hack</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Documents/Pinouts'>Pinouts</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Documents/SN76489'>SN76489</a>
+</li><li><a class='selflink' href='YM2413ApplicationManual'>YM2413 Application Manual</a>
+</li><li><a class='wikilink' href='YM2612'>YM2612</a>
+</li></ul>
+</div>
+<div class='vspace'></div><div class='fpltemplate'><h2><a class='wikilink' href='http://www.smspower.org/maxim/Winamp/Index'>Winamp</a></h2>
+<ul><li><a class='wikilink' href='http://www.smspower.org/maxim/Winamp/InVgm'>in_vgm</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Winamp/RegionTxtGenerator'>region.txt Generator</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Winamp/Skins'>Skins</a>
+</li></ul>
+</div>
+<div class='vspace'></div><div class='fpltemplate'><h2><a class='wikilink' href='http://www.smspower.org/maxim/Misc/Index'>Misc</a></h2>
+<ul><li><a class='wikilink' href='http://www.smspower.org/maxim/Misc/16-Bit'>16-Bit</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Misc/OtherStuff'>Other Stuff</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Misc/POV-RayBox'>POV-Ray Box</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Misc/Software'>Software</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Misc/TripleHeadWallpaper'>Triple Head Wallpaper</a>
+</li></ul>
+</div>
+<div class='vspace'></div><h2>Meta</h2>
+<ul><li><a class='wikilink' href='http://www.smspower.org/maxim/Site/Contact'>Contact</a>
+</li><li><a class='wikilink' href='http://www.smspower.org/maxim/Documents/YM2413ApplicationManual?action=print'>Print</a>
+</li></ul>
+</div>
+                </div>
+                <div class="clearer"></div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div id="copyright">
+                <span style="float: left; padding-left: 20px;">
+                    <!-- Site Meter -->
+<script type="text/javascript" src="http://sm5.sitemeter.com/js/counter.js?site=sm5smscheck">
+<noscript>
+<a href="http://sm5.sitemeter.com/stats.asp?site=sm5smscheck">
+<img src="http://sm5.sitemeter.com/meter.asp?site=sm5smscheck" alt="Site Meter">
+</a>
+</noscript>
+<!-- Copyright (c)2009 Site Meter -->
+</script>
+                </span>
+                <span style="float: right; display: block; padding-right: 20px;">
+                    Powered by Z80A
+                </span>
+            </div>
+        </div>
+    <!--HTMLFooter-->
+    </body>
+</html>
