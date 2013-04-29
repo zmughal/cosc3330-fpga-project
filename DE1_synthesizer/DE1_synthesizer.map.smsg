@@ -1,0 +1,1 @@
+Warning (10236): Verilog HDL Implicit Net warning at DE1_synthesizer.v(190): created implicit net for "VGA_CLK"

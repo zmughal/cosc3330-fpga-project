@@ -1,0 +1,105 @@
+<sld_project_info>
+  <hub_info ir_width="8" node_count="1"/>
+  <node_info>
+    <node hpath="sld_signaltap:auto_signaltap_0" instance_id="0" mfg_id="110" node_id="0" sld_node_info="0x28006E00" version="5">
+      <parameters>
+        <parameter name="lpm_type" type="string" value="sld_signaltap"/>
+        <parameter name="sld_node_info" type="unknown" value="671116800"/>
+        <parameter name="sld_ip_version" type="dec" value="5"/>
+        <parameter name="sld_ip_minor_version" type="dec" value="0"/>
+        <parameter name="sld_common_ip_version" type="dec" value="0"/>
+        <parameter name="sld_data_bits" type="unknown" value="29"/>
+        <parameter name="sld_trigger_bits" type="unknown" value="29"/>
+        <parameter name="sld_data_bit_cntr_bits" type="unknown" value="5"/>
+        <parameter name="sld_node_crc_bits" type="dec" value="32"/>
+        <parameter name="sld_node_crc_hiword" type="unknown" value="42047"/>
+        <parameter name="sld_node_crc_loword" type="unknown" value="43267"/>
+        <parameter name="sld_incremental_routing" type="dec" value="0"/>
+        <parameter name="sld_sample_depth" type="unknown" value="2048"/>
+        <parameter name="sld_mem_address_bits" type="unknown" value="11"/>
+        <parameter name="sld_ram_block_type" type="string" value="AUTO"/>
+        <parameter name="sld_trigger_level" type="unknown" value="1"/>
+        <parameter name="sld_trigger_in_enabled" type="unknown" value="1"/>
+        <parameter name="sld_advanced_trigger_entity" type="unknown" value="basic,1,"/>
+        <parameter name="sld_trigger_level_pipeline" type="unknown" value="1"/>
+        <parameter name="sld_enable_advanced_trigger" type="unknown" value="0"/>
+        <parameter name="sld_advanced_trigger_1" type="string" value="NONE"/>
+        <parameter name="sld_advanced_trigger_2" type="string" value="NONE"/>
+        <parameter name="sld_advanced_trigger_3" type="string" value="NONE"/>
+        <parameter name="sld_advanced_trigger_4" type="string" value="NONE"/>
+        <parameter name="sld_advanced_trigger_5" type="string" value="NONE"/>
+        <parameter name="sld_advanced_trigger_6" type="string" value="NONE"/>
+        <parameter name="sld_advanced_trigger_7" type="string" value="NONE"/>
+        <parameter name="sld_advanced_trigger_8" type="string" value="NONE"/>
+        <parameter name="sld_advanced_trigger_9" type="string" value="NONE"/>
+        <parameter name="sld_advanced_trigger_10" type="string" value="NONE"/>
+        <parameter name="sld_inversion_mask_length" type="unknown" value="107"/>
+        <parameter name="sld_inversion_mask" type="unknown" value="00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/>
+        <parameter name="sld_power_up_trigger" type="unknown" value="0"/>
+      </parameters>
+      <inputs>
+        <port name="acq_trigger_in[0]" source="PS2_CLK"/>
+        <port name="acq_data_in[0]" source="PS2_CLK"/>
+        <port name="acq_trigger_in[1]" source="PS2_DAT"/>
+        <port name="acq_data_in[1]" source="PS2_DAT"/>
+        <port name="trigger_in" source="PS2_KEYBOARD:keyboard|ps2_dat"/>
+        <port name="acq_trigger_in[2]" source="PS2_KEYBOARD:keyboard|revcnt[0]"/>
+        <port name="acq_data_in[2]" source="PS2_KEYBOARD:keyboard|revcnt[0]"/>
+        <port name="acq_trigger_in[3]" source="PS2_KEYBOARD:keyboard|revcnt[1]"/>
+        <port name="acq_data_in[3]" source="PS2_KEYBOARD:keyboard|revcnt[1]"/>
+        <port name="acq_trigger_in[4]" source="PS2_KEYBOARD:keyboard|revcnt[2]"/>
+        <port name="acq_data_in[4]" source="PS2_KEYBOARD:keyboard|revcnt[2]"/>
+        <port name="acq_trigger_in[5]" source="PS2_KEYBOARD:keyboard|revcnt[3]"/>
+        <port name="acq_data_in[5]" source="PS2_KEYBOARD:keyboard|revcnt[3]"/>
+        <port name="acq_trigger_in[6]" source="PS2_KEYBOARD:keyboard|revcnt[4]"/>
+        <port name="acq_data_in[6]" source="PS2_KEYBOARD:keyboard|revcnt[4]"/>
+        <port name="acq_trigger_in[7]" source="PS2_KEYBOARD:keyboard|revcnt[5]"/>
+        <port name="acq_data_in[7]" source="PS2_KEYBOARD:keyboard|revcnt[5]"/>
+        <port name="acq_trigger_in[8]" source="PS2_KEYBOARD:keyboard|revcnt[6]"/>
+        <port name="acq_data_in[8]" source="PS2_KEYBOARD:keyboard|revcnt[6]"/>
+        <port name="acq_trigger_in[9]" source="PS2_KEYBOARD:keyboard|revcnt[7]"/>
+        <port name="acq_data_in[9]" source="PS2_KEYBOARD:keyboard|revcnt[7]"/>
+        <port name="acq_trigger_in[10]" source="PS2_KEYBOARD:keyboard|scandata[0]"/>
+        <port name="acq_data_in[10]" source="PS2_KEYBOARD:keyboard|scandata[0]"/>
+        <port name="acq_trigger_in[11]" source="PS2_KEYBOARD:keyboard|scandata[1]"/>
+        <port name="acq_data_in[11]" source="PS2_KEYBOARD:keyboard|scandata[1]"/>
+        <port name="acq_trigger_in[12]" source="PS2_KEYBOARD:keyboard|scandata[2]"/>
+        <port name="acq_data_in[12]" source="PS2_KEYBOARD:keyboard|scandata[2]"/>
+        <port name="acq_trigger_in[13]" source="PS2_KEYBOARD:keyboard|scandata[3]"/>
+        <port name="acq_data_in[13]" source="PS2_KEYBOARD:keyboard|scandata[3]"/>
+        <port name="acq_trigger_in[14]" source="PS2_KEYBOARD:keyboard|scandata[4]"/>
+        <port name="acq_data_in[14]" source="PS2_KEYBOARD:keyboard|scandata[4]"/>
+        <port name="acq_trigger_in[15]" source="PS2_KEYBOARD:keyboard|scandata[5]"/>
+        <port name="acq_data_in[15]" source="PS2_KEYBOARD:keyboard|scandata[5]"/>
+        <port name="acq_trigger_in[16]" source="PS2_KEYBOARD:keyboard|scandata[6]"/>
+        <port name="acq_data_in[16]" source="PS2_KEYBOARD:keyboard|scandata[6]"/>
+        <port name="acq_trigger_in[17]" source="PS2_KEYBOARD:keyboard|scandata[7]"/>
+        <port name="acq_data_in[17]" source="PS2_KEYBOARD:keyboard|scandata[7]"/>
+        <port name="acq_clk" source="VGA_CLK_o[4]"/>
+        <port name="acq_trigger_in[18]" source="ps_clk"/>
+        <port name="acq_data_in[18]" source="ps_clk"/>
+        <port name="acq_trigger_in[19]" source="ps_cnt[0]"/>
+        <port name="acq_data_in[19]" source="ps_cnt[0]"/>
+        <port name="acq_trigger_in[20]" source="ps_cnt[1]"/>
+        <port name="acq_data_in[20]" source="ps_cnt[1]"/>
+        <port name="acq_trigger_in[21]" source="ps_cnt[2]"/>
+        <port name="acq_data_in[21]" source="ps_cnt[2]"/>
+        <port name="acq_trigger_in[22]" source="ps_cnt[3]"/>
+        <port name="acq_data_in[22]" source="ps_cnt[3]"/>
+        <port name="acq_trigger_in[23]" source="ps_cnt[4]"/>
+        <port name="acq_data_in[23]" source="ps_cnt[4]"/>
+        <port name="acq_trigger_in[24]" source="ps_cnt[5]"/>
+        <port name="acq_data_in[24]" source="ps_cnt[5]"/>
+        <port name="acq_trigger_in[25]" source="ps_cnt[6]"/>
+        <port name="acq_data_in[25]" source="ps_cnt[6]"/>
+        <port name="acq_trigger_in[26]" source="ps_cnt[7]"/>
+        <port name="acq_data_in[26]" source="ps_cnt[7]"/>
+        <port name="acq_trigger_in[27]" source="ps_cnt[8]"/>
+        <port name="acq_data_in[27]" source="ps_cnt[8]"/>
+        <port name="acq_trigger_in[28]" source="ps_cnt[9]"/>
+        <port name="acq_data_in[28]" source="ps_cnt[9]"/>
+      </inputs>
+      <outputs/>
+    </node>
+  </node_info>
+</sld_project_info>
